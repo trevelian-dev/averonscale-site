@@ -7,7 +7,7 @@
 <meta name="description" content="Averon Scale runs and makes Meta ads for streetwear and clothing brands. One flat monthly fee. No percentage of your sales.">
 <meta property="og:title" content="Averon Scale | Meta ads for clothing brands">
 <meta property="og:description" content="Ads run and made for streetwear and clothing brands. One flat monthly fee. No percentage of your sales.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?w=1200&q=80&auto=format&fit=crop">
+<meta property="og:image" content="https://averonscale.com/og.png">
 <meta name="theme-color" content="#050505">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23050505'/%3E%3Cpath d='M16 6 6 26h5l5-11 5 11h5z' fill='%23e0b97a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,12 +75,40 @@
   .hero .sub { font-size: clamp(17px, 1.6vw, 21px); max-width: 600px; margin: 28px auto 0; color: var(--text); }
   .hero .cta { display: flex; gap: 12px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
 
-  .panel { position: relative; margin: 64px auto 0; max-width: 1180px; border: 1px solid var(--line2); border-radius: 32px; overflow: hidden; min-height: 600px; background: #111 center 22% / cover no-repeat; display: grid; grid-template-columns: 1fr 420px; align-items: end; text-align: left; }
-  .panel::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,5,5,.15) 0%, rgba(5,5,5,.55) 60%, rgba(5,5,5,.9) 100%), linear-gradient(0deg, rgba(5,5,5,.7), transparent 45%); }
+  .panel { position: relative; margin: 64px auto 0; max-width: 1180px; border: 1px solid var(--line2); border-radius: 32px; overflow: hidden; min-height: 640px; background: radial-gradient(640px 460px at 30% 38%, rgba(224,185,122,.17), transparent 68%), #0b0b0b; display: grid; grid-template-columns: 1fr 420px; align-items: stretch; text-align: left; }
   .panel > * { position: relative; }
-  .facts { align-self: end; padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 560px; }
-  .fact { background: rgba(10,10,10,.55); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--line2); border-radius: 18px; padding: 18px 20px; }
-  .fact b { display: block; font: 500 30px var(--head); letter-spacing: -.03em; color: var(--cream); line-height: 1; }
+  .lcol { display: flex; flex-direction: column; justify-content: space-between; gap: 26px; padding: 36px 32px 32px; }
+  .stack { position: relative; flex: 1; min-height: 360px; }
+  .stack .mock { position: absolute; width: 212px; top: 50%; left: 50%; box-shadow: 0 30px 70px -20px rgba(0,0,0,.8); transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+  .stack .mock:nth-child(1) { transform: translate(-152%, -48%) rotate(-6deg); }
+  .stack .mock:nth-child(2) { transform: translate(-50%, -54%); z-index: 2; }
+  .stack .mock:nth-child(3) { transform: translate(52%, -48%) rotate(6deg); }
+  .panel:hover .stack .mock:nth-child(1) { transform: translate(-158%, -51%) rotate(-8deg); }
+  .panel:hover .stack .mock:nth-child(3) { transform: translate(58%, -51%) rotate(8deg); }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .fact { background: rgba(255,255,255,.04); border: 1px solid var(--line2); border-radius: 16px; padding: 14px 16px; }
+  .fact b { display: block; font: 500 24px var(--head); letter-spacing: -.03em; color: var(--cream); line-height: 1; }
+
+  /* ad creatives built in code */
+  .mock { aspect-ratio: 9 / 16; border-radius: calc(var(--u, 2.1px) * 6); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: calc(var(--u, 2.1px) * 5); position: relative; border: 1px solid rgba(255,255,255,.14); text-align: left; }
+  .mock .mk-top { display: flex; align-items: center; gap: calc(var(--u, 2.1px) * 3); font: 500 calc(var(--u, 2.1px) * 4.6) var(--body); }
+  .mock .mk-top i { width: calc(var(--u, 2.1px) * 9); height: calc(var(--u, 2.1px) * 9); border-radius: 50%; background: currentColor; opacity: .9; flex: none; }
+  .mock .mk-top b { font-weight: 600; letter-spacing: -.01em; }
+  .mock .mk-top span { margin-left: auto; opacity: .6; font-size: calc(var(--u, 2.1px) * 4); }
+  .mock .mk-body small { display: block; font: 500 calc(var(--u, 2.1px) * 4) var(--mono); letter-spacing: .12em; text-transform: uppercase; opacity: .75; margin-bottom: calc(var(--u, 2.1px) * 4); }
+  .mock .mk-body h4 { font: 800 calc(var(--u, 2.1px) * 15)/.92 var(--head); letter-spacing: -.045em; text-transform: uppercase; }
+  .mock .mk-body p { font-size: calc(var(--u, 2.1px) * 5.4); line-height: 1.3; margin: calc(var(--u, 2.1px) * 5) 0 0; color: inherit; opacity: .85; max-width: 90%; }
+  .mock .mk-cta { display: flex; justify-content: space-between; align-items: center; border-radius: 99px; padding: calc(var(--u, 2.1px) * 3.4) calc(var(--u, 2.1px) * 3.4) calc(var(--u, 2.1px) * 3.4) calc(var(--u, 2.1px) * 6); font: 600 calc(var(--u, 2.1px) * 5.2) var(--body); }
+  .mock .mk-cta u { text-decoration: none; width: calc(var(--u, 2.1px) * 9); height: calc(var(--u, 2.1px) * 9); border-radius: 50%; display: grid; place-items: center; font-size: calc(var(--u, 2.1px) * 5); }
+  .mock.m-black { background: linear-gradient(170deg, #161616, #070707); color: var(--cream); }
+  .mock.m-black .mk-body h4 em { font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none; color: var(--gold); letter-spacing: 0; font-size: 1.12em; }
+  .mock.m-black .mk-cta { background: var(--gold); color: var(--gold-ink); } .mock.m-black .mk-cta u { background: var(--gold-ink); color: var(--gold); }
+  .mock.m-gold { background: linear-gradient(170deg, #eac98f, #d4a964); color: #1b1204; }
+  .mock.m-gold .mk-cta { background: #1b1204; color: #f4ecdd; } .mock.m-gold .mk-cta u { background: var(--gold); color: #1b1204; }
+  .mock.m-bone { background: linear-gradient(170deg, #f6f0e3, #e4dccb); color: #14110b; }
+  .mock.m-bone .mk-body h4 em { font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none; color: #9a6b1f; letter-spacing: 0; font-size: 1.12em; }
+  .mock.m-bone .mk-cta { background: #14110b; color: #f4ecdd; } .mock.m-bone .mk-cta u { background: #e0b97a; color: #14110b; }
+  .mock .ex { position: absolute; top: calc(var(--u, 2.1px) * 5); right: calc(var(--u, 2.1px) * 5); display: none; }
   .fact span { display: block; margin-top: 8px; font-size: 13px; color: var(--text); line-height: 1.35; }
   .plan { margin: 20px; background: rgba(10,10,10,.78); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid var(--line2); border-radius: 24px; padding: 26px; }
   .plan h3 { font-size: 24px; margin-bottom: 4px; }
@@ -95,7 +123,6 @@
   .plan .note { font-size: 12.5px; color: var(--mute); margin-top: 12px; text-align: center; }
   .plan .done { display: none; font: 500 20px var(--head); color: var(--cream); padding: 22px 4px; line-height: 1.3; }
 
-  .panel-spacer { display: none; }
   /* marquee */
   .marq { border-block: 1px solid var(--line); overflow: hidden; margin-top: 70px; }
   .marq-track { display: flex; width: max-content; animation: slide 40s linear infinite; }
@@ -130,10 +157,12 @@
   .curve svg { width: 100%; height: auto; display: block; }
   .curve .cap { display: flex; justify-content: space-between; color: var(--mute); padding: 6px 4px 12px; font-size: 11px; }
   .phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
-  .pc { position: relative; border-radius: 28px; overflow: hidden; min-height: 500px; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid var(--line2); background: #111 center / cover no-repeat; isolation: isolate; }
-  .pc::before { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(5,5,5,.96) 6%, rgba(5,5,5,.55) 48%, rgba(5,5,5,.1) 100%); z-index: -1; }
-  .pc .chip { position: absolute; top: 20px; left: 20px; border: 1px solid var(--line2); background: rgba(10,10,10,.55); backdrop-filter: blur(10px); border-radius: 999px; padding: 7px 13px; color: var(--cream); }
-  .pc .tx { padding: 28px; }
+  .pc { position: relative; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--line2); background: radial-gradient(420px 320px at 50% 0%, rgba(224,185,122,.14), transparent 70%), var(--card); }
+  .pc .chip { position: absolute; top: 20px; left: 20px; z-index: 3; border: 1px solid var(--line2); background: rgba(10,10,10,.6); backdrop-filter: blur(10px); border-radius: 999px; padding: 7px 13px; color: var(--cream); }
+  .pc .stage { display: grid; place-items: center; padding: 64px 0 8px; }
+  .pc .stage .mock { width: 58%; max-width: 230px; box-shadow: 0 30px 60px -22px rgba(0,0,0,.85); transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+  .pc:hover .stage .mock { transform: translateY(-6px) rotate(-1.5deg); }
+  .pc .tx { padding: 22px 28px 28px; }
   .pc h3 { font-size: 34px; }
   .pc p { margin: 12px 0 18px; font-size: 16px; color: var(--text); }
   .pc a { color: var(--gold); font-weight: 500; font-size: 15px; display: inline-flex; gap: 8px; align-items: center; }
@@ -230,11 +259,9 @@
   }
   @media (max-width: 1000px) {
     .panel { grid-template-columns: 1fr; min-height: 0; }
-    .panel { background-position: center 12%; }
-    .facts { order: 2; padding: 0 20px 20px; max-width: none; }
-    .plan { order: 1; }
-    .panel::before { background: linear-gradient(0deg, rgba(5,5,5,.9), rgba(5,5,5,.45) 70%); }
-    .panel-spacer { display: block; height: 300px; }
+    .lcol { padding: 28px 20px 4px; }
+    .stack { min-height: 400px; }
+    .facts { grid-template-columns: 1fr 1fr; }
     .bf-card, .calc-grid { grid-template-columns: 1fr; gap: 40px; }
     .bf-card { padding: 44px 28px; }
     .phases, .steps, .cmp { grid-template-columns: 1fr; }
@@ -254,7 +281,12 @@
     .hero { padding-top: 46px; }
     .hero .cta .btn { width: 100%; }
     .panel { border-radius: 24px; margin-top: 44px; }
-    .panel-spacer { height: 240px; }
+    .stack { min-height: 330px; }
+    .stack .mock { width: 138px; }
+    .stack .mock:nth-child(1) { transform: translate(-112%, -50%) rotate(-7deg); }
+    .stack .mock:nth-child(3) { transform: translate(12%, -50%) rotate(7deg); }
+    .stack .mock:nth-child(2) { transform: translate(-50%, -54%); }
+    .panel:hover .stack .mock:nth-child(1), .panel:hover .stack .mock:nth-child(3) { transform: inherit; }
     .plan { margin: 12px; padding: 20px; }
     .facts { grid-template-columns: 1fr 1fr; padding: 0 12px 12px; }
     .fact { padding: 14px 14px; } .fact b { font-size: 22px; }
@@ -262,7 +294,7 @@
     .bx.s3, .bx.s2, .bx.s4 { grid-column: auto; }
     .bx { min-height: 0; padding: 28px 24px; }
     .bx h3 { margin-top: 28px; }
-    .pc { min-height: 440px; }
+    .pc .stage .mock { width: 62%; }
     .calc { padding: 22px; }
     .out { grid-template-columns: 1fr; }
     .out .big b { font-size: 44px; }
@@ -303,13 +335,31 @@
       <a class="btn ghost" href="#numbers">Run my numbers</a>
     </div>
 
-    <div class="panel" style="background-image:url('https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?w=2000&q=80&auto=format&fit=crop')">
-      <div class="panel-spacer"></div>
-      <div class="facts">
-        <div class="fact"><b>0%</b><span>of your sales. Ever.</span></div>
-        <div class="fact"><b>1 fee</b><span>Flat, every month.</span></div>
-        <div class="fact"><b>Your card</b><span>Ad spend goes straight to Meta.</span></div>
-        <div class="fact"><b>Mondays</b><span>Spend, sales, cost per sale.</span></div>
+    <div class="panel">
+      <div class="lcol">
+        <div class="stack" aria-label="Example ads for a drop: early access, drop day, and cart reminder" role="img">
+          <div class="mock m-black">
+            <div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div>
+            <div class="mk-body"><small>Weeks before</small><h4>Members <em>first.</em></h4><p>Drop 01 opens Friday. Get on the list.</p></div>
+            <div class="mk-cta">Join the list <u>&rarr;</u></div>
+          </div>
+          <div class="mock m-gold">
+            <div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div>
+            <div class="mk-body"><small>Drop day</small><h4>Drop 01 is live.</h4><p>Small run. When it's gone, it's gone.</p></div>
+            <div class="mk-cta">Shop now <u>&rarr;</u></div>
+          </div>
+          <div class="mock m-bone">
+            <div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div>
+            <div class="mk-body"><small>The days after</small><h4>Still <em>thinking?</em></h4><p>Your size is still here. For now.</p></div>
+            <div class="mk-cta">Finish your order <u>&rarr;</u></div>
+          </div>
+        </div>
+        <div class="facts">
+          <div class="fact"><b>0%</b><span>of your sales. Ever.</span></div>
+          <div class="fact"><b>1 fee</b><span>Flat, every month.</span></div>
+          <div class="fact"><b>Your card</b><span>Ad spend goes straight to Meta.</span></div>
+          <div class="fact"><b>Mondays</b><span>Spend, sales, cost per sale.</span></div>
+        </div>
       </div>
       <form class="plan plan-form" id="plan-top" autocomplete="on">
         <h3>Get your free ads plan</h3>
@@ -405,16 +455,19 @@
       </div>
 
       <div class="phases">
-        <article class="pc reveal" role="img" aria-label="Model in an orange hoodie on stairs" style="background-image:url('https://images.unsplash.com/photo-1578768079052-aa76e52ff62e?w=900&q=80&auto=format&fit=crop')">
+        <article class="pc reveal">
           <span class="chip mono">Weeks before</span>
+          <div class="stage" aria-hidden="true"><div class="mock m-black"><div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div><div class="mk-body"><small>Early access</small><h4>Be on the <em>list.</em></h4><p>Get the link before anyone else.</p></div><div class="mk-cta">Sign up <u>&rarr;</u></div></div></div>
           <div class="tx"><h3>Build the list</h3><p>Ads that send new people to your early-access list, so drop day starts with buyers already waiting.</p><a href="#plan-top">Plan my next drop <span>&rarr;</span></a></div>
         </article>
-        <article class="pc reveal" role="img" aria-label="Model in a beige hoodie outdoors" style="background-image:url('https://images.unsplash.com/photo-1685328403732-64be6bb9d112?w=900&q=80&auto=format&fit=crop')">
+        <article class="pc reveal">
           <span class="chip mono">Drop day</span>
+          <div class="stage" aria-hidden="true"><div class="mock m-gold"><div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div><div class="mk-body"><small>You signed up</small><h4>It's open.</h4><p>Your early access ends tonight.</p></div><div class="mk-cta">Shop the drop <u>&rarr;</u></div></div></div>
           <div class="tx"><h3>Sell to them</h3><p>Ads only to the people who signed up, visited or watched. The warmest buyers you have, reached first.</p><a href="#plan-top">Plan my next drop <span>&rarr;</span></a></div>
         </article>
-        <article class="pc reveal" role="img" aria-label="Man in a white sweatshirt against red brick" style="background-image:url('https://images.unsplash.com/photo-1632682582909-2b3a2581eef7?w=900&q=80&auto=format&fit=crop')">
+        <article class="pc reveal">
           <span class="chip mono">The days after</span>
+          <div class="stage" aria-hidden="true"><div class="mock m-bone"><div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div><div class="mk-body"><small>Left in your cart</small><h4>Don't <em>sleep</em> on it.</h4><p>Your size is still here. For now.</p></div><div class="mk-cta">Finish your order <u>&rarr;</u></div></div></div>
           <div class="tx"><h3>Close the gap</h3><p>Reminders to anyone who left a cart, and new ads off whatever sold best. Nothing left on the table.</p><a href="#plan-top">Plan my next drop <span>&rarr;</span></a></div>
         </article>
       </div>
@@ -670,6 +723,12 @@
     words.forEach((w, i) => w.classList.toggle("on", i < n));
   }
   addEventListener("scroll", paint, { passive: true }); addEventListener("resize", paint); paint();
+
+  // Ad creatives scale with their own width (1 unit = 1% of the creative)
+  const mocks = document.querySelectorAll(".mock");
+  const setU = () => mocks.forEach((m) => m.style.setProperty("--u", (m.offsetWidth / 100) + "px"));
+  setU(); addEventListener("resize", setU); addEventListener("load", setU);
+  if ("ResizeObserver" in window) { const ro = new ResizeObserver(setU); mocks.forEach((m) => ro.observe(m)); }
 
   // Card glow follows the cursor
   document.querySelectorAll(".bx").forEach((c) => c.addEventListener("pointermove", (e) => {
