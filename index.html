@@ -12,7 +12,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23050505'/%3E%3Cpath d='M16 6 6 26h5l5-11 5 11h5z' fill='%23e0b97a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #050505;
@@ -26,7 +26,6 @@
     --gold: #e0b97a;
     --gold-ink: #1b1204;
     --head: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
-    --serif: "Instrument Serif", Georgia, serif;
     --body: "Inter", "Helvetica Neue", Arial, sans-serif;
     --mono: "DM Mono", ui-monospace, Menlo, monospace;
   }
@@ -34,10 +33,11 @@
   html { scroll-behavior: smooth; scroll-padding-top: 100px; }
   body { font-family: var(--body); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.55; overflow-x: hidden; }
   a { color: inherit; text-decoration: none; }
+  i, em, cite, address { font-style: normal; }
   img { display: block; max-width: 100%; }
   .wrap { max-width: 1240px; margin: 0 auto; padding-inline: 28px; }
   h1, h2, h3 { font-family: var(--head); font-weight: 500; color: var(--cream); letter-spacing: -0.035em; line-height: 1.02; text-wrap: balance; }
-  h1 em, h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; color: var(--gold); }
+  h1 em, h2 em { font-style: normal; font-weight: 500; color: var(--gold); }
   .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
   :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
@@ -58,7 +58,7 @@
   .announce b { font-weight: 500; color: var(--cream); }
   .nav-wrap { position: sticky; top: 14px; z-index: 50; padding: 14px 20px 0; }
   .nav { max-width: 1040px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 9px 9px 9px 24px; background: rgba(12,12,12,.72); backdrop-filter: blur(16px) saturate(1.3); -webkit-backdrop-filter: blur(16px) saturate(1.3); border: 1px solid var(--line2); border-radius: 999px; }
-  .logo { font-family: var(--serif); font-size: 26px; color: var(--cream); letter-spacing: .14em; display: flex; align-items: baseline; gap: 8px; }
+  .logo { font-family: var(--head); font-weight: 600; font-size: 20px; color: var(--cream); letter-spacing: .2em; display: flex; align-items: baseline; gap: 8px; }
   .logo small { font: 500 10px var(--mono); letter-spacing: .24em; color: var(--gold); }
   .links { display: flex; gap: 30px; font-size: 14px; font-weight: 500; }
   .links a { color: var(--mute); transition: color .2s; }
@@ -101,12 +101,12 @@
   .mock .mk-cta { display: flex; justify-content: space-between; align-items: center; border-radius: 99px; padding: calc(var(--u, 2.1px) * 3.4) calc(var(--u, 2.1px) * 3.4) calc(var(--u, 2.1px) * 3.4) calc(var(--u, 2.1px) * 6); font: 600 calc(var(--u, 2.1px) * 5.2) var(--body); }
   .mock .mk-cta u { text-decoration: none; width: calc(var(--u, 2.1px) * 9); height: calc(var(--u, 2.1px) * 9); border-radius: 50%; display: grid; place-items: center; font-size: calc(var(--u, 2.1px) * 5); }
   .mock.m-black { background: linear-gradient(170deg, #161616, #070707); color: var(--cream); }
-  .mock.m-black .mk-body h4 em { font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none; color: var(--gold); letter-spacing: 0; font-size: 1.12em; }
+  .mock.m-black .mk-body h4 em { font-style: normal; color: var(--gold); }
   .mock.m-black .mk-cta { background: var(--gold); color: var(--gold-ink); } .mock.m-black .mk-cta u { background: var(--gold-ink); color: var(--gold); }
   .mock.m-gold { background: linear-gradient(170deg, #eac98f, #d4a964); color: #1b1204; }
   .mock.m-gold .mk-cta { background: #1b1204; color: #f4ecdd; } .mock.m-gold .mk-cta u { background: var(--gold); color: #1b1204; }
   .mock.m-bone { background: linear-gradient(170deg, #f6f0e3, #e4dccb); color: #14110b; }
-  .mock.m-bone .mk-body h4 em { font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none; color: #9a6b1f; letter-spacing: 0; font-size: 1.12em; }
+  .mock.m-bone .mk-body h4 em { font-style: normal; color: #9a6b1f; }
   .mock.m-bone .mk-cta { background: #14110b; color: #f4ecdd; } .mock.m-bone .mk-cta u { background: #e0b97a; color: #14110b; }
   .mock .ex { position: absolute; top: calc(var(--u, 2.1px) * 5); right: calc(var(--u, 2.1px) * 5); display: none; }
   .fact span { display: block; margin-top: 8px; font-size: 13px; color: var(--text); line-height: 1.35; }
@@ -175,7 +175,7 @@
   .bx::before { content: ""; position: absolute; inset: 0; background: radial-gradient(420px circle at var(--mx) var(--my), rgba(224,185,122,.13), transparent 60%); opacity: 0; transition: opacity .3s; pointer-events: none; }
   .bx:hover { border-color: rgba(224,185,122,.45); }
   .bx:hover::before { opacity: 1; }
-  .bx .n { font: 400 54px/1 var(--serif); font-style: italic; color: var(--gold); }
+  .bx .n { font: 500 40px/1 var(--head); letter-spacing: -.03em; color: var(--gold); }
   .bx h3 { font-size: 27px; margin: 36px 0 10px; line-height: 1.08; }
   .bx p { color: var(--mute); font-size: 16px; max-width: 420px; }
   .bx.s3 { grid-column: span 3; } .bx.s2 { grid-column: span 2; } .bx.s4 { grid-column: span 4; }
@@ -223,7 +223,7 @@
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; }
   .step { padding: 40px 36px 44px; background: var(--card); border-right: 1px solid var(--line); }
   .step:last-child { border-right: 0; }
-  .step .n { font: italic 400 60px/1 var(--serif); color: var(--gold); }
+  .step .n { font: 500 54px/1 var(--head); letter-spacing: -.04em; color: var(--gold); }
   .step h3 { font-size: 26px; margin: 28px 0 12px; }
   .step p { color: var(--mute); font-size: 16px; }
 
