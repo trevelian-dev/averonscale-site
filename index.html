@@ -310,22 +310,36 @@
 <footer>
   <div class="wrap">
     <div><b style="color:var(--ink)">Averon Scale</b> &nbsp;·&nbsp; Meta ads for streetwear and clothing brands</div>
-    <div>&copy; 2026 Averon Scale</div>
+    <div><a href="mailto:hello@averonscale.com" style="color:var(--ink)">hello@averonscale.com</a> &nbsp;·&nbsp; &copy; 2026 Averon Scale</div>
   </div>
 </footer>
 
 <script>
-  // Where plan requests go. Set FORM_ENDPOINT once the lead inbox is chosen.
-  const FORM_ENDPOINT = "";
+  // Plan requests go to hello@averonscale.com through FormSubmit.
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/hello@averonscale.com";
   const form = document.getElementById("plan");
+  const btn = form.querySelector("button");
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = new FormData(form);
-    if (FORM_ENDPOINT) {
-      try { await fetch(FORM_ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } }); } catch (err) {}
+    data.append("_subject", "New plan request: " + (data.get("instagram") || ""));
+    data.append("_template", "table");
+    data.append("_captcha", "false");
+    btn.disabled = true;
+    btn.firstChild.textContent = "Sending... ";
+    let ok = false;
+    try {
+      const r = await fetch(FORM_ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } });
+      ok = r.ok;
+    } catch (err) {}
+    if (ok) {
+      form.querySelectorAll(".field, .pill, .widget-note").forEach(el => el.style.display = "none");
+      document.getElementById("done").style.display = "block";
+    } else {
+      btn.disabled = false;
+      btn.firstChild.textContent = "Get my free ads plan ";
+      document.querySelector(".widget-note").innerHTML = 'That didn\'t go through. Email us at <a href="mailto:hello@averonscale.com" style="text-decoration:underline">hello@averonscale.com</a> and we\'ll send your plan.';
     }
-    form.querySelectorAll(".field, .pill, .widget-note").forEach(el => el.style.display = "none");
-    document.getElementById("done").style.display = "block";
   });
 </script>
 </body>
