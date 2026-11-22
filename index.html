@@ -642,6 +642,14 @@
 <script>
   // Plan requests go to hello@averonscale.com through FormSubmit.
   const FORM_ENDPOINT = "https://formsubmit.co/ajax/hello@averonscale.com";
+  // Remember where the visitor came from (ad, post, DM link) so every plan request says its source.
+  const SRC_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
+  const src = {};
+  try {
+    const q = new URLSearchParams(location.search);
+    SRC_KEYS.forEach((k) => { const v = q.get(k); if (v) sessionStorage.setItem(k, v.slice(0, 80)); });
+    SRC_KEYS.forEach((k) => { src[k] = sessionStorage.getItem(k) || ""; });
+  } catch (err) {}
   document.querySelectorAll(".plan-form").forEach((form) => {
     const btn = form.querySelector("button");
     const lbl = btn.querySelector(".lbl");
@@ -652,6 +660,8 @@
       data.append("_subject", "New plan request: " + (data.get("instagram") || ""));
       data.append("_template", "table");
       data.append("_captcha", "false");
+      data.append("source", src.utm_source || "direct");
+      data.append("campaign", [src.utm_medium, src.utm_campaign, src.utm_content].filter(Boolean).join(" / ") || "none");
       btn.disabled = true;
       lbl.textContent = "Sending...";
       let ok = false;
@@ -660,6 +670,7 @@
         ok = r.ok;
       } catch (err) {}
       if (ok) {
+        if (window.fbq) fbq("track", "Lead");
         form.querySelectorAll(".field, .btn, .note, .lead, h3").forEach((el) => (el.style.display = "none"));
         form.querySelector(".done").style.display = "block";
       } else {
