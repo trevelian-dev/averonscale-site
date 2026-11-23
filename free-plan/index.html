@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free ads plan | Averon Scale</title>
+<meta name="description" content="Send your brand&#x27;s Instagram and get a free Meta ads plan for your next drop.">
+<link rel="canonical" href="https://averonscale.com/free-plan/">
+<meta property="og:title" content="Free ads plan | Averon Scale">
+<meta property="og:description" content="Send your brand&#x27;s Instagram and get a free Meta ads plan for your next drop.">
+<meta property="og:image" content="https://averonscale.com/og.png">
+<meta property="og:url" content="https://averonscale.com/free-plan/">
+<meta name="theme-color" content="#f2eee6">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<!-- Meta Pixel: Averon Scale -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1146721501546311');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1146721501546311&amp;ev=PageView&amp;noscript=1"></noscript>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/" aria-label="Averon Scale home"><img src="/brand/favicon-64.png" alt="" width="34" height="34"><b>Averon Scale</b></a>
+  <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav class="nav" id="nav">
+    <a href="/work/">Work</a><a href="/how-it-works/">How it works</a><a href="/about/">About</a>
+    <a class="btn" href="/free-plan/">Get a free ads plan</a>
+  </nav>
+</div></header>
+<main>
+
+<section class="hero"><div class="wrap split" style="align-items:start">
+  <div>
+    <span class="kicker">Free ads plan</span>
+    <h1 style="margin:18px 0 22px;max-width:12ch">A plan for your next drop.</h1>
+    <p class="lede">Built for your brand, not a template. It comes back to your inbox within 48 hours, and there's no call unless you want one.</p>
+    <ul class="check" style="margin-top:36px">
+      <li><b>Your Instagram.</b> What already gets people to react, and which posts can become ads.</li>
+      <li><b>Your store.</b> Where a buyer gets stuck between the ad and checkout.</li>
+      <li><b>Your ads.</b> What you've run, how long, and whether it ever had a chance to learn.</li>
+      <li><b>Your next drop.</b> The weeks before, drop day and after, with your own dates.</li>
+    </ul>
+  </div>
+  <div class="form" id="plan-form-box">
+    <form class="plan-form" novalidate>
+      <div class="fields">
+        <h2>Send me your brand</h2>
+        <p class="small">Takes about a minute.</p>
+        <div class="field"><label for="ig">Brand Instagram</label><input id="ig" name="instagram" placeholder="@yourbrand" required autocomplete="off"></div>
+        <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" placeholder="you@yourbrand.com" required autocomplete="email"></div>
+        <div class="field"><label for="ads">Running ads now?</label>
+          <select id="ads" name="running_ads"><option>Not yet</option><option>Boosting posts only</option><option>Yes, under $1K a month</option><option>Yes, $1K to $5K a month</option><option>Yes, over $5K a month</option></select></div>
+        <div class="field"><label for="drop">Next drop <small>(optional)</small></label><input id="drop" name="next_drop" placeholder="e.g. mid January, or not set"></div>
+        <button class="btn" type="submit"><span class="lbl">Send me my plan</span> <span class="arrow">&rarr;</span></button>
+        <p class="msg">Free. Or email <a href="mailto:hello@averonscale.com">hello@averonscale.com</a> with your Instagram.</p>
+      </div>
+      <div class="ok">
+        <h2>Got it.</h2>
+        <p class="lede" style="margin-top:12px">Your plan is on its way within 48 hours. If anything comes up before then, reply to the email or write to <a href="mailto:hello@averonscale.com">hello@averonscale.com</a>.</p>
+      </div>
+    </form>
+  </div>
+</div></section>
+<script>
+(function(){
+var ENDPOINT='https://formsubmit.co/ajax/hello@averonscale.com';
+var KEYS=['utm_source','utm_medium','utm_campaign','utm_content'],src={};
+try{var q=new URLSearchParams(location.search);KEYS.forEach(function(k){var v=q.get(k);if(v)sessionStorage.setItem(k,v.slice(0,80))});KEYS.forEach(function(k){src[k]=sessionStorage.getItem(k)||''})}catch(e){}
+var form=document.querySelector('.plan-form'),box=document.getElementById('plan-form-box'),btn=form.querySelector('button'),lbl=btn.querySelector('.lbl'),msg=form.querySelector('.msg');
+form.addEventListener('submit',async function(e){
+  e.preventDefault();
+  var ig=form.instagram.value.trim(),em=form.email.value.trim();
+  if(!ig||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent='Add your brand Instagram and a working email.';return}
+  var d=new FormData(form);
+  d.append('_subject','New plan request: '+ig);d.append('_template','table');d.append('_captcha','false');
+  d.append('source',src.utm_source||'direct');
+  d.append('campaign',[src.utm_medium,src.utm_campaign,src.utm_content].filter(Boolean).join(' / ')||'none');
+  btn.disabled=true;lbl.textContent='Sending...';
+  try{var r=await fetch(ENDPOINT,{method:'POST',body:d,headers:{Accept:'application/json'}});var j=await r.json();
+    if(!r.ok||String(j.success)!=='true')throw new Error('fail');
+    box.classList.add('sent');form.classList.add('sent');if(window.fbq)fbq('track','Lead');
+  }catch(err){btn.disabled=false;lbl.textContent='Send me my plan';
+    var mb=encodeURIComponent('Brand Instagram: '+ig+'\nRunning ads: '+form.running_ads.value+'\nNext drop: '+form.next_drop.value);msg.innerHTML='That didn\'t go through on our side. <a href="mailto:hello@averonscale.com?subject=Free%20ads%20plan&body='+mb+'" style="font-weight:600;color:var(--ink)">Send it by email instead</a>. It\'s already filled in.';}
+});
+})();
+</script>
+</main>
+<footer><div class="wrap">
+  <div>
+    <a class="brand" href="/"><img src="/brand/favicon-64.png" alt="" width="34" height="34"><b>Averon Scale</b></a>
+    <p style="margin-top:18px;max-width:38ch">Meta ads for streetwear and clothing brands. Run from Houston, Texas.</p>
+  </div>
+  <div><h4>Pages</h4><ul>
+    <li><a href="/work/">Work</a></li><li><a href="/how-it-works/">How it works</a></li>
+    <li><a href="/about/">About</a></li><li><a href="/free-plan/">Free ads plan</a></li></ul></div>
+  <div><h4>Contact</h4><ul>
+    <li><a href="mailto:hello@averonscale.com">hello@averonscale.com</a></li>
+    <li><a href="https://www.instagram.com/vemito/" rel="noopener">Instagram @vemito</a></li></ul></div>
+  <div class="wordmark" aria-hidden="true">averon<span></span></div>
+  <div class="legal"><span>&copy; 2026 Averon Scale</span><a href="/privacy.html">Privacy</a></div>
+</div></footer>
+<script>
+document.querySelector('.menu').addEventListener('click', function () {
+  var n = document.getElementById('nav'); var o = n.classList.toggle('open');
+  this.setAttribute('aria-expanded', o ? 'true' : 'false');
+});
+</script>
+</body></html>
