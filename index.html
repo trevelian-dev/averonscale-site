@@ -4,20 +4,309 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Averon Scale | Meta ads for clothing brands</title>
-<meta name="description" content="Instagram and Facebook ads for streetwear and clothing brands, made from your own content. One flat monthly fee, no cut of your sales.">
-<link rel="canonical" href="https://averonscale.com/">
+<meta name="description" content="Averon Scale runs and makes Meta ads for streetwear and clothing brands. One flat monthly fee. No percentage of your sales.">
 <meta property="og:title" content="Averon Scale | Meta ads for clothing brands">
-<meta property="og:description" content="Instagram and Facebook ads for streetwear and clothing brands, made from your own content. One flat monthly fee, no cut of your sales.">
+<meta property="og:description" content="Ads run and made for streetwear and clothing brands. One flat monthly fee. No percentage of your sales.">
 <meta property="og:image" content="https://averonscale.com/og.png">
-<meta property="og:url" content="https://averonscale.com/">
-<meta name="theme-color" content="#f2eee6">
+<meta name="theme-color" content="#050505">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050505;
+    --bg2: #0b0b0b;
+    --card: #101010;
+    --line: rgba(255,255,255,.10);
+    --line2: rgba(255,255,255,.18);
+    --cream: #f4ecdd;
+    --text: #d9d3c6;
+    --mute: #8a867b;
+    --gold: #e0b97a;
+    --gold-ink: #1b1204;
+    --head: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+    --body: "Inter", "Helvetica Neue", Arial, sans-serif;
+    --mono: "DM Mono", ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+  body { font-family: var(--body); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; line-height: 1.55; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  i, em, cite, address { font-style: normal; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding-inline: 28px; }
+  h1, h2, h3 { font-family: var(--head); font-weight: 500; color: var(--cream); letter-spacing: -0.035em; line-height: 1.02; text-wrap: balance; }
+  h1 em, h2 em { font-style: normal; font-weight: 500; color: var(--gold); }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  /* buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--gold); color: var(--gold-ink); height: 52px; padding: 0 12px 0 26px; border-radius: 999px; border: 0; font: 600 16px var(--body); cursor: pointer; white-space: nowrap; transition: transform .2s, background .2s, box-shadow .2s; box-shadow: 0 0 0 0 rgba(224,185,122,.0); }
+  .btn i { width: 30px; height: 30px; border-radius: 50%; background: var(--gold-ink); color: var(--gold); display: grid; place-items: center; font-style: normal; font-size: 15px; transition: transform .2s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 40px -8px rgba(224,185,122,.55); background: #ecc88f; }
+  .btn:hover i { transform: translateX(3px); }
+  .btn.ghost { background: transparent; color: var(--cream); border: 1px solid var(--line2); padding: 0 26px; box-shadow: none; }
+  .btn.ghost:hover { background: rgba(255,255,255,.06); }
+  .btn.sm { height: 42px; padding: 0 8px 0 18px; font-size: 14px; }
+  .btn.sm i { width: 26px; height: 26px; font-size: 13px; }
+  .btn[disabled] { opacity: .6; cursor: wait; }
+
+  /* announce bar + nav */
+  .announce { background: #0d0a05; border-bottom: 1px solid rgba(224,185,122,.25); text-align: center; padding: 9px 16px; color: var(--gold); }
+  .announce a { text-decoration: underline; text-underline-offset: 3px; }
+  .announce b { font-weight: 500; color: var(--cream); }
+  .nav-wrap { position: sticky; top: 14px; z-index: 50; padding: 14px 20px 0; }
+  .nav { max-width: 1040px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 9px 9px 9px 24px; background: rgba(12,12,12,.72); backdrop-filter: blur(16px) saturate(1.3); -webkit-backdrop-filter: blur(16px) saturate(1.3); border: 1px solid var(--line2); border-radius: 999px; }
+  .logo { font-family: var(--head); font-weight: 600; font-size: 20px; color: var(--cream); letter-spacing: .2em; display: flex; align-items: baseline; gap: 8px; }
+  .logo small { font: 500 10px var(--mono); letter-spacing: .24em; color: var(--gold); }
+  .links { display: flex; gap: 30px; font-size: 14px; font-weight: 500; }
+  .links a { color: var(--mute); transition: color .2s; }
+  .links a:hover { color: var(--cream); }
+
+  /* hero */
+  html { overflow-x: clip; }
+  .hero { position: relative; text-align: center; padding-block: 70px 40px; overflow-x: clip; }
+  .hero::before { content: ""; position: absolute; left: 50%; top: -120px; transform: translateX(-50%); width: 1100px; height: 700px; background: radial-gradient(closest-side, rgba(224,185,122,.20), rgba(224,185,122,.05) 55%, transparent 75%); pointer-events: none; z-index: 0; }
+  .hero > * { position: relative; z-index: 1; }
+  .badge { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--line2); background: rgba(255,255,255,.03); border-radius: 999px; padding: 8px 16px; color: var(--text); margin-bottom: 30px; }
+  .badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px var(--gold); }
+  .hero h1 { font-size: clamp(46px, 7.6vw, 108px); max-width: 1000px; margin: 0 auto; }
+  .hero .sub { font-size: clamp(17px, 1.6vw, 21px); max-width: 600px; margin: 28px auto 0; color: var(--text); }
+  .hero .cta { display: flex; gap: 12px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
+
+  .panel { position: relative; margin: 64px auto 0; max-width: 1180px; border: 1px solid var(--line2); border-radius: 32px; overflow: hidden; min-height: 640px; background: radial-gradient(640px 460px at 30% 38%, rgba(224,185,122,.17), transparent 68%), #0b0b0b; display: grid; grid-template-columns: 1fr 420px; align-items: stretch; text-align: left; }
+  .panel > * { position: relative; }
+  .lcol { display: flex; flex-direction: column; justify-content: space-between; gap: 26px; padding: 36px 32px 32px; }
+  .stack { position: relative; flex: 1; min-height: 360px; }
+  .stack .mock { position: absolute; width: 212px; top: 50%; left: 50%; box-shadow: 0 30px 70px -20px rgba(0,0,0,.8); transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+  .stack .mock:nth-child(1) { transform: translate(-152%, -48%) rotate(-6deg); }
+  .stack .mock:nth-child(2) { transform: translate(-50%, -54%); z-index: 2; }
+  .stack .mock:nth-child(3) { transform: translate(52%, -48%) rotate(6deg); }
+  .panel:hover .stack .mock:nth-child(1) { transform: translate(-158%, -51%) rotate(-8deg); }
+  .panel:hover .stack .mock:nth-child(3) { transform: translate(58%, -51%) rotate(8deg); }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .fact { background: rgba(255,255,255,.04); border: 1px solid var(--line2); border-radius: 16px; padding: 14px 16px; }
+  .fact b { display: block; font: 500 24px var(--head); letter-spacing: -.03em; color: var(--cream); line-height: 1; }
+
+  /* ad creatives built in code */
+  .mock { aspect-ratio: 9 / 16; border-radius: calc(var(--u, 2.1px) * 6); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: calc(var(--u, 2.1px) * 5); position: relative; border: 1px solid rgba(255,255,255,.14); text-align: left; }
+  .mock .mk-top { display: flex; align-items: center; gap: calc(var(--u, 2.1px) * 3); font: 500 calc(var(--u, 2.1px) * 4.6) var(--body); }
+  .mock .mk-top i { width: calc(var(--u, 2.1px) * 9); height: calc(var(--u, 2.1px) * 9); border-radius: 50%; background: currentColor; opacity: .9; flex: none; }
+  .mock .mk-top b { font-weight: 600; letter-spacing: -.01em; }
+  .mock .mk-top span { margin-left: auto; opacity: .6; font-size: calc(var(--u, 2.1px) * 4); }
+  .mock .mk-body small { display: block; font: 500 calc(var(--u, 2.1px) * 4) var(--mono); letter-spacing: .12em; text-transform: uppercase; opacity: .75; margin-bottom: calc(var(--u, 2.1px) * 4); }
+  .mock .mk-body h4 { font: 800 calc(var(--u, 2.1px) * 15)/.92 var(--head); letter-spacing: -.045em; text-transform: uppercase; }
+  .mock .mk-body p { font-size: calc(var(--u, 2.1px) * 5.4); line-height: 1.3; margin: calc(var(--u, 2.1px) * 5) 0 0; color: inherit; opacity: .85; max-width: 90%; }
+  .mock .mk-cta { display: flex; justify-content: space-between; align-items: center; border-radius: 99px; padding: calc(var(--u, 2.1px) * 3.4) calc(var(--u, 2.1px) * 3.4) calc(var(--u, 2.1px) * 3.4) calc(var(--u, 2.1px) * 6); font: 600 calc(var(--u, 2.1px) * 5.2) var(--body); }
+  .mock .mk-cta u { text-decoration: none; width: calc(var(--u, 2.1px) * 9); height: calc(var(--u, 2.1px) * 9); border-radius: 50%; display: grid; place-items: center; font-size: calc(var(--u, 2.1px) * 5); }
+  .mock.m-black { background: linear-gradient(170deg, #161616, #070707); color: var(--cream); }
+  .mock.m-black .mk-body h4 em { font-style: normal; color: var(--gold); }
+  .mock.m-black .mk-cta { background: var(--gold); color: var(--gold-ink); } .mock.m-black .mk-cta u { background: var(--gold-ink); color: var(--gold); }
+  .mock.m-gold { background: linear-gradient(170deg, #eac98f, #d4a964); color: #1b1204; }
+  .mock.m-gold .mk-cta { background: #1b1204; color: #f4ecdd; } .mock.m-gold .mk-cta u { background: var(--gold); color: #1b1204; }
+  .mock.m-bone { background: linear-gradient(170deg, #f6f0e3, #e4dccb); color: #14110b; }
+  .mock.m-bone .mk-body h4 em { font-style: normal; color: #9a6b1f; }
+  .mock.m-bone .mk-cta { background: #14110b; color: #f4ecdd; } .mock.m-bone .mk-cta u { background: #e0b97a; color: #14110b; }
+  .mock .ex { position: absolute; top: calc(var(--u, 2.1px) * 5); right: calc(var(--u, 2.1px) * 5); display: none; }
+  .fact span { display: block; margin-top: 8px; font-size: 13px; color: var(--text); line-height: 1.35; }
+  .plan { margin: 20px; background: rgba(10,10,10,.78); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); border: 1px solid var(--line2); border-radius: 24px; padding: 26px; }
+  .plan h3 { font-size: 24px; margin-bottom: 4px; }
+  .plan .lead { font-size: 14px; color: var(--mute); margin-bottom: 18px; }
+  .plan .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+  .plan label { font: 500 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--mute); }
+  .plan input, .plan select { height: 50px; border: 1px solid var(--line2); border-radius: 12px; padding: 0 14px; font: 500 16px var(--body); color: var(--cream); background: rgba(255,255,255,.05); outline: none; width: 100%; transition: border-color .2s, background .2s; }
+  .plan select option { color: #111; }
+  .plan input::placeholder { color: #6f6b62; }
+  .plan input:focus, .plan select:focus { border-color: var(--gold); background: rgba(255,255,255,.08); }
+  .plan .btn { width: 100%; justify-content: space-between; height: 56px; padding-left: 26px; font-size: 17px; margin-top: 6px; }
+  .plan .note { font-size: 12.5px; color: var(--mute); margin-top: 12px; text-align: center; }
+  .plan .done { display: none; font: 500 20px var(--head); color: var(--cream); padding: 22px 4px; line-height: 1.3; }
+
+  /* marquee */
+  .marq { border-block: 1px solid var(--line); overflow: hidden; margin-top: 70px; }
+  .marq-track { display: flex; width: max-content; animation: slide 40s linear infinite; }
+  .marq span { font: 500 13px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); padding: 22px 34px; white-space: nowrap; display: flex; align-items: center; gap: 34px; }
+  .marq span::after { content: ""; width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  section { padding-block: 130px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); margin-bottom: 24px; }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+  .center { text-align: center; }
+  h2 { font-size: clamp(36px, 5.4vw, 78px); }
+
+  /* statement (scroll fill) */
+  .statement { padding-block: 150px 130px; }
+  .fill { font: 400 clamp(28px, 4.2vw, 60px)/1.18 var(--head); letter-spacing: -.03em; max-width: 1060px; margin: 0 auto; text-align: center; text-wrap: balance; }
+  .fill span { color: #3a3833; transition: color .35s ease; }
+  .fill span.on { color: var(--cream); }
+  .fill-sub { text-align: center; color: var(--mute); max-width: 520px; margin: 40px auto 0; font-size: 17px; }
+
+  /* countdown */
+  .bf-card { position: relative; border: 1px solid var(--line2); border-radius: 36px; padding: 70px 56px; overflow: hidden; background: radial-gradient(900px 400px at 85% 0%, rgba(224,185,122,.20), transparent 60%), var(--card); display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .bf-card h2 { font-size: clamp(34px, 4.6vw, 66px); }
+  .bf-card p { margin: 22px 0 30px; max-width: 480px; font-size: 18px; }
+  .clock { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .clock div { background: rgba(255,255,255,.04); border: 1px solid var(--line2); border-radius: 20px; padding: 22px 6px 16px; text-align: center; }
+  .clock b { display: block; font: 500 clamp(34px, 4.6vw, 62px)/1 var(--head); letter-spacing: -.04em; color: var(--cream); font-variant-numeric: tabular-nums; }
+  .clock small { display: block; margin-top: 10px; font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+
+  /* drop */
+  .curve { border: 1px solid var(--line2); border-radius: 28px; background: var(--card); padding: 28px 28px 14px; margin-top: 54px; }
+  .curve svg { width: 100%; height: auto; display: block; }
+  .curve .cap { display: flex; justify-content: space-between; color: var(--mute); padding: 6px 4px 12px; font-size: 11px; }
+  .phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
+  .pc { position: relative; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--line2); background: radial-gradient(420px 320px at 50% 0%, rgba(224,185,122,.14), transparent 70%), var(--card); }
+  .pc .chip { position: absolute; top: 20px; left: 20px; z-index: 3; border: 1px solid var(--line2); background: rgba(10,10,10,.6); backdrop-filter: blur(10px); border-radius: 999px; padding: 7px 13px; color: var(--cream); }
+  .pc .stage { display: grid; place-items: center; padding: 64px 0 8px; }
+  .pc .stage .mock { width: 58%; max-width: 230px; box-shadow: 0 30px 60px -22px rgba(0,0,0,.85); transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+  .pc:hover .stage .mock { transform: translateY(-6px) rotate(-1.5deg); }
+  .pc .tx { padding: 22px 28px 28px; }
+  .pc h3 { font-size: 34px; }
+  .pc p { margin: 12px 0 18px; font-size: 16px; color: var(--text); }
+  .pc a { color: var(--gold); font-weight: 500; font-size: 15px; display: inline-flex; gap: 8px; align-items: center; }
+  .pc a:hover { gap: 12px; }
+  .pc a { transition: gap .2s; }
+
+  /* bento */
+  .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-top: 56px; }
+  .bx { position: relative; border: 1px solid var(--line); border-radius: 26px; background: var(--card); padding: 34px 32px 36px; min-height: 270px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; transition: border-color .25s; --mx: 50%; --my: 0%; }
+  .bx::before { content: ""; position: absolute; inset: 0; background: radial-gradient(420px circle at var(--mx) var(--my), rgba(224,185,122,.13), transparent 60%); opacity: 0; transition: opacity .3s; pointer-events: none; }
+  .bx:hover { border-color: rgba(224,185,122,.45); }
+  .bx:hover::before { opacity: 1; }
+  .bx .n { font: 500 40px/1 var(--head); letter-spacing: -.03em; color: var(--gold); }
+  .bx h3 { font-size: 27px; margin: 36px 0 10px; line-height: 1.08; }
+  .bx p { color: var(--mute); font-size: 16px; max-width: 420px; }
+  .bx.s3 { grid-column: span 3; } .bx.s2 { grid-column: span 2; } .bx.s4 { grid-column: span 4; }
+  .bx.fee { background: linear-gradient(160deg, #1a1408, #0d0a05); border-color: rgba(224,185,122,.4); }
+  .bx.fee .btn { align-self: flex-start; margin-top: 22px; }
+
+  /* calculator */
+  .calc-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+  .calc-grid .lede { font-size: 18px; margin-top: 24px; max-width: 440px; }
+  .calc { border: 1px solid var(--line2); border-radius: 30px; background: var(--card); padding: 34px; }
+  .slider { margin-bottom: 26px; }
+  .slider .top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; gap: 12px; }
+  .slider label { font: 500 11.5px var(--mono); letter-spacing: .09em; text-transform: uppercase; color: var(--mute); }
+  .slider output { font: 500 28px var(--head); color: var(--cream); letter-spacing: -.03em; }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 99px; background: #25231f; outline-offset: 8px; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--gold); border: 4px solid #0b0b0b; box-shadow: 0 0 0 1.5px var(--gold); cursor: grab; }
+  input[type=range]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--gold); border: 4px solid #0b0b0b; box-shadow: 0 0 0 1.5px var(--gold); cursor: grab; }
+  .out { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .out .o { border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; background: rgba(255,255,255,.025); }
+  .out .o.big { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 12px; border-color: rgba(224,185,122,.4); background: rgba(224,185,122,.07); }
+  .out small { display: block; font: 500 11px var(--mono); letter-spacing: .09em; text-transform: uppercase; color: var(--mute); }
+  .out b { display: block; font: 500 32px var(--head); letter-spacing: -.035em; color: var(--cream); margin-top: 6px; font-variant-numeric: tabular-nums; line-height: 1; }
+  .out .big b { color: var(--gold); font-size: 56px; margin: 0; }
+  .calc .fine { font-size: 13px; color: var(--mute); margin-top: 18px; }
+
+  /* compare */
+  .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 56px; }
+  .col { border: 1px solid var(--line); border-radius: 28px; padding: 38px 36px; background: var(--card); }
+  .col.us { border-color: rgba(224,185,122,.5); background: linear-gradient(170deg, #17120a, #0c0c0c 60%); }
+  .col h3 { font-size: 26px; margin-bottom: 24px; }
+  .col ul { list-style: none; display: grid; gap: 0; }
+  .col li { padding: 16px 0 16px 34px; border-top: 1px solid var(--line); position: relative; font-size: 16.5px; }
+  .col li::before { content: "×"; position: absolute; left: 0; top: 14px; color: #6f6b62; font-size: 22px; line-height: 1.1; }
+  .col.us li::before { content: "✓"; color: var(--gold); font-size: 17px; top: 17px; }
+  .col.us li { color: var(--cream); }
+
+  /* plan checks */
+  .checks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 56px; }
+  .ck { border: 1px solid var(--line); border-radius: 24px; padding: 28px 26px 30px; background: var(--card); }
+  .ck h3 { font-size: 22px; margin: 18px 0 10px; line-height: 1.1; }
+  .ck p { font-size: 15px; color: var(--mute); }
+  .ck .mono { color: var(--gold); }
+
+  /* steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 56px; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; }
+  .step { padding: 40px 36px 44px; background: var(--card); border-right: 1px solid var(--line); }
+  .step:last-child { border-right: 0; }
+  .step .n { font: 500 54px/1 var(--head); letter-spacing: -.04em; color: var(--gold); }
+  .step h3 { font-size: 26px; margin: 28px 0 12px; }
+  .step p { color: var(--mute); font-size: 16px; }
+
+  /* faq */
+  .faq { max-width: 860px; margin: 56px auto 0; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 26px 4px; font: 500 21px var(--head); color: var(--cream); letter-spacing: -.02em; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary i { flex: none; width: 34px; height: 34px; border: 1px solid var(--line2); border-radius: 50%; display: grid; place-items: center; font-style: normal; color: var(--gold); font-size: 20px; line-height: 1; transition: transform .25s, background .25s; }
+  .faq details[open] summary i { transform: rotate(45deg); background: rgba(224,185,122,.12); }
+  .faq details p { padding: 0 60px 28px 4px; color: var(--text); font-size: 17px; max-width: 720px; }
+
+  /* final */
+  .final { position: relative; text-align: center; padding-block: 130px 140px; overflow: hidden; }
+  .final::before { content: ""; position: absolute; left: 50%; bottom: -260px; transform: translateX(-50%); width: 1100px; height: 640px; background: radial-gradient(closest-side, rgba(224,185,122,.22), transparent 70%); pointer-events: none; }
+  .final > * { position: relative; }
+  .final h2 { font-size: clamp(40px, 7vw, 104px); max-width: 980px; margin: 0 auto; }
+  .final .lede { font-size: 19px; max-width: 520px; margin: 26px auto 44px; }
+  .final .plan { max-width: 520px; margin: 0 auto; text-align: left; }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 0 50px; color: var(--mute); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  footer a { color: var(--cream); border-bottom: 1px solid var(--line2); }
+
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marq-track { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .fill span { color: var(--cream); transition: none; }
+    html { scroll-behavior: auto; }
+  }
+  @media (max-width: 1000px) {
+    .panel { grid-template-columns: 1fr; min-height: 0; }
+    .lcol { padding: 28px 20px 4px; }
+    .stack { min-height: 400px; }
+    .facts { grid-template-columns: 1fr 1fr; }
+    .bf-card, .calc-grid { grid-template-columns: 1fr; gap: 40px; }
+    .bf-card { padding: 44px 28px; }
+    .phases, .steps, .cmp { grid-template-columns: 1fr; }
+    .step { border-right: 0; border-bottom: 1px solid var(--line); }
+    .step:last-child { border-bottom: 0; }
+    .bento { grid-template-columns: 1fr 1fr; }
+    .bx.s3, .bx.s2, .bx.s4 { grid-column: span 2; }
+    .checks { grid-template-columns: 1fr 1fr; }
+    .links { display: none; }
+    section { padding-block: 90px; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding-inline: 18px; }
+    .nav-wrap { padding: 10px 12px 0; top: 8px; }
+    .nav { padding: 7px 7px 7px 18px; }
+    .logo { font-size: 21px; } .logo small { display: none; }
+    .hero { padding-top: 46px; }
+    .hero .cta .btn { width: 100%; }
+    .panel { border-radius: 24px; margin-top: 44px; }
+    .stack { min-height: 330px; }
+    .stack .mock { width: 138px; }
+    .stack .mock:nth-child(1) { transform: translate(-112%, -50%) rotate(-7deg); }
+    .stack .mock:nth-child(3) { transform: translate(12%, -50%) rotate(7deg); }
+    .stack .mock:nth-child(2) { transform: translate(-50%, -54%); }
+    .panel:hover .stack .mock:nth-child(1), .panel:hover .stack .mock:nth-child(3) { transform: inherit; }
+    .plan { margin: 12px; padding: 20px; }
+    .facts { grid-template-columns: 1fr 1fr; padding: 0 12px 12px; }
+    .fact { padding: 14px 14px; } .fact b { font-size: 22px; }
+    .checks, .bento { grid-template-columns: 1fr; }
+    .bx.s3, .bx.s2, .bx.s4 { grid-column: auto; }
+    .bx { min-height: 0; padding: 28px 24px; }
+    .bx h3 { margin-top: 28px; }
+    .pc .stage .mock { width: 62%; }
+    .calc { padding: 22px; }
+    .out { grid-template-columns: 1fr; }
+    .out .big b { font-size: 44px; }
+    .col { padding: 28px 22px; }
+    .faq summary { font-size: 18px; }
+    .faq details p { padding-right: 4px; }
+    .marq span { padding: 18px 22px; }
+    .announce { font-size: 11px; }
+  }
+</style>
 <!-- Meta Pixel: Averon Scale -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -26,111 +315,446 @@ fbq('init','1146721501546311');fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1146721501546311&amp;ev=PageView&amp;noscript=1"></noscript>
 </head>
 <body>
-<header class="top"><div class="wrap">
-  <a class="brand" href="/" aria-label="Averon Scale home"><img src="/brand/favicon-64.png" alt="" width="34" height="34"><b>Averon Scale</b></a>
-  <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-  <nav class="nav" id="nav">
-    <a href="/work/">Work</a><a href="/how-it-works/">How it works</a><a href="/about/">About</a>
-    <a class="btn" href="/free-plan/">Get a free ads plan</a>
+
+<div class="announce mono"><b>Black Friday is Nov 27.</b> <span id="ann">Ads cost the most that week</span> · <a href="#plan-top">Get your plan</a></div>
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="logo" href="#top" aria-label="Averon Scale home">AVERON<small>SCALE</small></a>
+    <div class="links">
+      <a href="#drop">The drop</a>
+      <a href="#offer">What you get</a>
+      <a href="#numbers">Your numbers</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="btn sm" href="#plan-top">Get your plan <i>&rarr;</i></a>
   </nav>
-</div></header>
-<main>
-
-<section class="hero"><div class="wrap split">
-  <div class="copy">
-    <span class="kicker">Meta ads for clothing brands</span>
-    <h1>You make the clothes. I&rsquo;ll sell&nbsp;them.</h1>
-    <p class="lede">Averon Scale runs Instagram and Facebook ads for streetwear and clothing brands, made from your own photos and video. One flat monthly fee. No cut of your sales.</p>
-    <div class="ctas">
-      <a class="btn" href="/free-plan/">Get a free ads plan <span class="arrow">&rarr;</span></a>
-      <a class="btn line" href="/work/">See the numbers</a>
-    </div>
-    <div class="meta-line"><span><b>Flat</b> monthly fee</span><span><b>0%</b> of your sales</span><span><b>Your</b> ad account</span><span><b>Monday</b> reports</span></div>
-  </div>
-  <figure class="collage">
-    <img class="main" src="/img/syn-a.jpg" alt="A model in a black Synotacy tee with a white graphic, hands on his head, against a white wall" width="1200" height="1496">
-    <div class="adchip">
-      <span class="tag">The real ad</span>
-      <img src="/img/syn-forty.jpg" alt="The Synotacy FORTY tee laid on a parking garage floor" width="1200" height="1500">
-      <div class="cap"><b>65 orders</b>$3,019 in sales on $1,124 of ad spend</div>
-    </div>
-    <figcaption>My own label, Synotacy. Phone photos, real ads, numbers read from Meta.</figcaption>
-  </figure>
-</div></section>
-
-<div class="proof"><div class="wrap">
-  <div class="proof-grid">
-    <div class="proof-item">
-      <div class="num">$8,195<small>in sales</small></div>
-      <p>from $3,842 in ads for my own streetwear label. 170 orders across tees, sweats and hoodies.</p>
-    </div>
-    <div class="proof-item">
-      <div class="num">$19,620<small>in sales</small></div>
-      <p>from $3,700 in ads selling tickets to a fashion show in Miami. 80 orders, 74 of them from one video campaign.</p>
-    </div>
-  </div>
-  <div class="proof-foot">
-    <span class="small">Purchases as Meta reports them, full account history, read Nov 23, 2026.</span>
-    <a class="btn line" href="/work/">How those ads were built <span class="arrow">&rarr;</span></a>
-  </div>
-</div></div>
-
-<div class="band">
-  <img src="/img/syn-forty.jpg" alt="FORTY tee on a garage floor" loading="lazy" width="1200" height="1500">
-  <img src="/img/syn-d.jpg" alt="Sweatpants leg detail on concrete" loading="lazy" width="900" height="1590">
-  <img src="/img/syn-e.jpg" alt="Black tee laid flat on concrete" loading="lazy" width="1000" height="1594">
-  <img src="/img/syn-c.jpg" alt="Cargo sweatpants on concrete" loading="lazy" width="1000" height="1583">
 </div>
-<div class="wrap band-cap"><span>Every photo on this site came out of a real ad account. No stock photos, no renders.</span><a href="/work/" style="color:var(--ink);font-weight:600">See what they sold &rarr;</a></div>
 
-<section><div class="wrap">
-  <span class="kicker">What I do</span>
-  <h2 style="margin-top:14px;max-width:16ch">The whole ad side of the brand, every month.</h2>
-  <div class="rows">
-    <div class="row"><span class="n">01</span><h3>Ads made from your content</h3><p>Your shoots, your fit pics, your customers. Phone photos sell clothes; the best ad on this site is a tee on a parking garage floor.</p></div>
-    <div class="row"><span class="n">02</span><h3>Run daily</h3><p>Budget moves to whatever is selling cheapest. Ads that don't sell get cut, and new ones go in built off what did.</p></div>
-    <div class="row"><span class="n">03</span><h3>Every sale tracked</h3><p>Pixel and Conversions API set up on your store, so Meta learns who actually buys and not just who clicks.</p></div>
-    <div class="row"><span class="n">04</span><h3>Planned around your drops</h3><p>List building in the weeks before, your warmest people first on drop day, and cart reminders after.</p></div>
-    <div class="row"><span class="n">05</span><h3>A report every Monday</h3><p>What you spent, what sold, and what each sale cost. Ad spend stays on your own card, so you always see it.</p></div>
-  </div>
-</div></section>
+<main id="top">
 
-<section class="rule"><div class="wrap split">
-  <figure class="figure"><img src="/img/syn-e.jpg" alt="A black Synotacy tee laid flat on concrete" width="1000" height="1594" style="aspect-ratio:4/5;object-fit:cover"></figure>
-  <div>
-    <span class="kicker">Who it's for</span>
-    <h2 style="margin:14px 0 22px">Brands that make the clothes and want someone on the ads.</h2>
-    <p class="lede">You have a store, a look, and product people like when they see it. You're boosting posts, or you ran ads once and they burned money. You want someone who knows clothing to run it, and you don't want to give up a percentage of every sale to do it.</p>
-    <p style="margin-top:28px"><a class="btn line" href="/how-it-works/">How it works <span class="arrow">&rarr;</span></a></p>
-  </div>
-</div></section>
+  <!-- HERO -->
+  <div class="wrap hero">
+    <div class="badge mono">Meta ads for clothing brands</div>
+    <h1>Ads that sell out <em>your drop.</em></h1>
+    <p class="sub">We run and make the Instagram and Facebook ads for streetwear and clothing brands. One flat monthly fee. No percentage of your sales.</p>
+    <div class="cta">
+      <a class="btn" href="#plan-top">Get my free ads plan <i>&rarr;</i></a>
+      <a class="btn ghost" href="#numbers">Run my numbers</a>
+    </div>
 
-<section class="dark"><div class="wrap cta-band">
-  <div>
-    <h2>Not sure ads will work for your brand<span class="dot">?</span></h2>
-    <p style="margin-top:18px" class="lede">Send me your Instagram. I'll look at your page, your store and any ads you've run, and send back a plan for your next drop. Free, and no call needed.</p>
+    <div class="panel">
+      <div class="lcol">
+        <div class="stack" aria-label="Example ads for a drop: early access, drop day, and cart reminder" role="img">
+          <div class="mock m-black">
+            <div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div>
+            <div class="mk-body"><small>Weeks before</small><h4>Members <em>first.</em></h4><p>Drop 01 opens Friday. Get on the list.</p></div>
+            <div class="mk-cta">Join the list <u>&rarr;</u></div>
+          </div>
+          <div class="mock m-gold">
+            <div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div>
+            <div class="mk-body"><small>Drop day</small><h4>Drop 01 is live.</h4><p>Small run. When it's gone, it's gone.</p></div>
+            <div class="mk-cta">Shop now <u>&rarr;</u></div>
+          </div>
+          <div class="mock m-bone">
+            <div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div>
+            <div class="mk-body"><small>The days after</small><h4>Still <em>thinking?</em></h4><p>Your size is still here. For now.</p></div>
+            <div class="mk-cta">Finish your order <u>&rarr;</u></div>
+          </div>
+        </div>
+        <div class="facts">
+          <div class="fact"><b>0%</b><span>of your sales. Ever.</span></div>
+          <div class="fact"><b>1 fee</b><span>Flat, every month.</span></div>
+          <div class="fact"><b>Your card</b><span>Ad spend goes straight to Meta.</span></div>
+          <div class="fact"><b>Mondays</b><span>Spend, sales, cost per sale.</span></div>
+        </div>
+      </div>
+      <form class="plan plan-form" id="plan-top" autocomplete="on">
+        <h3>Get your free ads plan</h3>
+        <p class="lead">Built around your next drop. No call needed.</p>
+        <div class="field">
+          <label for="handle1">Your brand's Instagram</label>
+          <input id="handle1" name="instagram" placeholder="@yourbrand" required>
+        </div>
+        <div class="field">
+          <label for="email1">Email</label>
+          <input id="email1" name="email" type="email" placeholder="you@brand.com" required>
+        </div>
+        <div class="field">
+          <label for="spend1">Running ads now?</label>
+          <select id="spend1" name="running_ads">
+            <option>Not yet</option>
+            <option>Yes, under $1K a month</option>
+            <option>Yes, $1K to $5K a month</option>
+            <option>Yes, over $5K a month</option>
+          </select>
+        </div>
+        <button class="btn" type="submit"><span class="lbl">Send me my plan</span> <i>&rarr;</i></button>
+        <div class="note">We look at your page, your store and your ads first.</div>
+        <div class="done">Got it. Your plan is on the way to your inbox.</div>
+      </form>
+    </div>
   </div>
-  <a class="btn gold" href="/free-plan/">Get my free ads plan <span class="arrow">&rarr;</span></a>
-</div></section>
+
+  <div class="marq" aria-hidden="true">
+    <div class="marq-track">
+      <span>One flat monthly fee</span><span>No percentage of sales</span><span>Ad spend on your own card</span><span>Ads made from your own content</span><span>Every sale tracked</span><span>Report every Monday</span>
+      <span>One flat monthly fee</span><span>No percentage of sales</span><span>Ad spend on your own card</span><span>Ads made from your own content</span><span>Every sale tracked</span><span>Report every Monday</span>
+    </div>
+  </div>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="wrap">
+      <p class="fill" id="fill">Most clothing brands run ads in bursts, and Meta never gets the time to learn who buys. We keep your ads on, make them from your own content, and track every sale, so your next drop starts with buyers already waiting.</p>
+      <p class="fill-sub reveal">Built for brands that make the clothes and want someone else to find the people who buy them.</p>
+    </div>
+  </section>
+
+  <!-- BLACK FRIDAY -->
+  <div class="wrap">
+    <div class="bf-card reveal" id="bf">
+      <div>
+        <div class="eyebrow mono">Black Friday is Nov 27</div>
+        <h2>The brands that win it <em>start now.</em></h2>
+        <p>Ads cost the most Black Friday week. Find your buyers while it's cheaper, then sell to them when it counts.</p>
+        <a class="btn" href="#plan-top">Get my Black Friday plan <i>&rarr;</i></a>
+      </div>
+      <div class="clock" role="timer" aria-label="Time until Black Friday">
+        <div><b id="cd-d">--</b><small>Days</small></div>
+        <div><b id="cd-h">--</b><small>Hours</small></div>
+        <div><b id="cd-m">--</b><small>Min</small></div>
+        <div><b id="cd-s">--</b><small>Sec</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE DROP -->
+  <section id="drop">
+    <div class="wrap">
+      <div class="center reveal">
+        <div class="eyebrow mono">Built around how clothing brands sell</div>
+        <h2>Before, during <em>and after</em><br>the drop.</h2>
+      </div>
+
+      <div class="curve reveal">
+        <svg viewBox="0 0 1000 250" role="img" aria-label="Illustration of demand building before a drop, peaking on drop day, and tailing off after">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#e0b97a" stop-opacity=".5"/>
+              <stop offset="1" stop-color="#e0b97a" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <g stroke="rgba(255,255,255,.14)" stroke-width="1.5" stroke-dasharray="5 7">
+            <line x1="380" y1="14" x2="380" y2="216"/>
+            <line x1="620" y1="14" x2="620" y2="216"/>
+          </g>
+          <path d="M0 206 C 90 204, 150 198, 220 186 S 330 150, 380 120 C 410 70, 440 22, 500 22 C 560 22, 590 70, 620 112 C 660 150, 720 168, 800 182 S 940 196, 1000 198 L1000 216 L0 216 Z" fill="url(#g)"/>
+          <path d="M0 206 C 90 204, 150 198, 220 186 S 330 150, 380 120 C 410 70, 440 22, 500 22 C 560 22, 590 70, 620 112 C 660 150, 720 168, 800 182 S 940 196, 1000 198" fill="none" stroke="#f4ecdd" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="500" cy="22" r="8" fill="#e0b97a" stroke="#050505" stroke-width="3"/>
+          <line x1="0" y1="216" x2="1000" y2="216" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+          <g font-family="DM Mono, monospace" font-size="15" letter-spacing="1.6" fill="#8a867b">
+            <text x="14" y="242">WEEKS BEFORE</text>
+            <text x="453" y="242" fill="#e0b97a">DROP DAY</text>
+            <text x="718" y="242">THE DAYS AFTER</text>
+          </g>
+        </svg>
+        <div class="cap mono"><span>Illustration of the shape, not a result</span><span>Demand over a drop</span></div>
+      </div>
+
+      <div class="phases">
+        <article class="pc reveal">
+          <span class="chip mono">Weeks before</span>
+          <div class="stage" aria-hidden="true"><div class="mock m-black"><div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div><div class="mk-body"><small>Early access</small><h4>Be on the <em>list.</em></h4><p>Get the link before anyone else.</p></div><div class="mk-cta">Sign up <u>&rarr;</u></div></div></div>
+          <div class="tx"><h3>Build the list</h3><p>Ads that send new people to your early-access list, so drop day starts with buyers already waiting.</p><a href="#plan-top">Plan my next drop <span>&rarr;</span></a></div>
+        </article>
+        <article class="pc reveal">
+          <span class="chip mono">Drop day</span>
+          <div class="stage" aria-hidden="true"><div class="mock m-gold"><div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div><div class="mk-body"><small>You signed up</small><h4>It's open.</h4><p>Your early access ends tonight.</p></div><div class="mk-cta">Shop the drop <u>&rarr;</u></div></div></div>
+          <div class="tx"><h3>Sell to them</h3><p>Ads only to the people who signed up, visited or watched. The warmest buyers you have, reached first.</p><a href="#plan-top">Plan my next drop <span>&rarr;</span></a></div>
+        </article>
+        <article class="pc reveal">
+          <span class="chip mono">The days after</span>
+          <div class="stage" aria-hidden="true"><div class="mock m-bone"><div class="mk-top"><i></i><b>yourbrand</b><span>Sponsored</span></div><div class="mk-body"><small>Left in your cart</small><h4>Don't <em>sleep</em> on it.</h4><p>Your size is still here. For now.</p></div><div class="mk-cta">Finish your order <u>&rarr;</u></div></div></div>
+          <div class="tx"><h3>Close the gap</h3><p>Reminders to anyone who left a cart, and new ads off whatever sold best. Nothing left on the table.</p><a href="#plan-top">Plan my next drop <span>&rarr;</span></a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section id="offer" style="padding-top:20px">
+    <div class="wrap">
+      <div class="center reveal">
+        <div class="eyebrow mono">What you get every month</div>
+        <h2>Ads, run <em>and made</em> for you.</h2>
+      </div>
+      <div class="bento">
+        <div class="bx s3 reveal"><div class="n">01</div><div><h3>Your Instagram and Facebook ads, run daily</h3><p>Budgets moved to whatever sells cheapest. Losers cut fast.</p></div></div>
+        <div class="bx s3 reveal"><div class="n">02</div><div><h3>Ads made from your own photos and video</h3><p>Your shoots, your customers, your world. Not stock templates.</p></div></div>
+        <div class="bx s2 reveal"><div class="n">03</div><div><h3>Tracking on your store</h3><p>Every sale counted, so Meta learns who actually buys.</p></div></div>
+        <div class="bx s2 reveal"><div class="n">04</div><div><h3>Audiences for every drop</h3><p>Site visitors, viewers, followers and your list, ready before launch.</p></div></div>
+        <div class="bx s2 reveal"><div class="n">05</div><div><h3>A report every Monday</h3><p>Spend, sales and cost per sale. No fluff.</p></div></div>
+        <div class="bx s6 reveal fee" style="grid-column:1/-1;min-height:0;flex-direction:row;align-items:center;gap:30px;flex-wrap:wrap">
+          <div style="max-width:640px"><h3 style="margin:0 0 10px">One flat monthly fee.</h3><p style="max-width:none">No percentage of your sales, ever. Your profit per order stays yours. Ad spend goes straight to Meta from your own card, so you always control it.</p></div>
+          <a class="btn" href="#plan-top" style="margin:0">Get your free plan <i>&rarr;</i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section id="numbers">
+    <div class="wrap calc-grid">
+      <div class="reveal">
+        <div class="eyebrow mono">Know it before you spend it</div>
+        <h2>What does a sale <em>have to</em> cost?</h2>
+        <p class="lede">Most brands run ads without knowing the one number that decides whether they make money. Move the sliders to your own prices and see yours.</p>
+      </div>
+      <div class="calc reveal">
+        <div class="slider">
+          <div class="top"><label for="aov">Average order</label><output id="aov-o">$85</output></div>
+          <input id="aov" type="range" min="25" max="400" step="5" value="85">
+        </div>
+        <div class="slider">
+          <div class="top"><label for="mar">Left after product, shipping, fees</label><output id="mar-o">55%</output></div>
+          <input id="mar" type="range" min="20" max="80" step="1" value="55">
+        </div>
+        <div class="slider">
+          <div class="top"><label for="bud">Monthly ad spend</label><output id="bud-o">$3,000</output></div>
+          <input id="bud" type="range" min="500" max="20000" step="250" value="3000">
+        </div>
+        <div class="out">
+          <div class="o big"><div><small>Break-even return on ad spend</small></div><b id="roas">1.8x</b></div>
+          <div class="o"><small>Most you can pay per sale</small><b id="cpa">$47</b></div>
+          <div class="o"><small>Sales a month to break even</small><b id="sales">64</b></div>
+        </div>
+        <p class="fine">Break-even means the ads pay for themselves. Anything above it is profit. Before returns and other overhead.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section style="padding-top:20px">
+    <div class="wrap">
+      <div class="center reveal">
+        <div class="eyebrow mono">How we get paid</div>
+        <h2>Your profit stays <em>your profit.</em></h2>
+      </div>
+      <div class="cmp">
+        <div class="col reveal">
+          <h3>Pay a cut of every sale</h3>
+          <ul>
+            <li>The more you sell, the more of your margin goes out the door</li>
+            <li>Your profit per order shrinks as you scale</li>
+            <li>Hard to tell what the ads actually cost you</li>
+          </ul>
+        </div>
+        <div class="col us reveal">
+          <h3>Averon Scale: one flat fee</h3>
+          <ul>
+            <li>No percentage of your sales, ever</li>
+            <li>Your profit per order stays yours</li>
+            <li>Ad spend on your own card, with a Monday report on every dollar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIDE THE PLAN -->
+  <section style="padding-top:20px">
+    <div class="wrap">
+      <div class="center reveal">
+        <div class="eyebrow mono">Inside your free plan</div>
+        <h2>We look at <em>four things.</em></h2>
+      </div>
+      <div class="checks">
+        <div class="ck reveal"><div class="mono">01</div><h3>Your Instagram</h3><p>What you post, what already gets people to react, and what can become an ad.</p></div>
+        <div class="ck reveal"><div class="mono">02</div><h3>Your store</h3><p>Where a buyer gets stuck between the ad and the checkout.</p></div>
+        <div class="ck reveal"><div class="mono">03</div><h3>Your ads</h3><p>Every ad you have run: how long it ran, and whether it ever had a chance to learn.</p></div>
+        <div class="ck reveal"><div class="mono">04</div><h3>Your next drop</h3><p>A plan for the weeks before, drop day and after, with your own dates.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section id="how" style="padding-top:20px">
+    <div class="wrap">
+      <div class="center reveal">
+        <div class="eyebrow mono">How it works</div>
+        <h2>Three steps <em>to live ads.</em></h2>
+      </div>
+      <div class="steps reveal">
+        <div class="step"><div class="n">1</div><h3>Get your free plan</h3><p>Send your Instagram above. We look at your page, store and ads and send a plan for your next drop.</p></div>
+        <div class="step"><div class="n">2</div><h3>15 minute call</h3><p>We walk through the plan, your goals and your numbers. If it's not a fit, no hard feelings.</p></div>
+        <div class="step"><div class="n">3</div><h3>Ads go live</h3><p>You add us to your ad account and send your photos and video. First ads are live within days.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:20px">
+    <div class="wrap">
+      <div class="center reveal">
+        <div class="eyebrow mono">Questions</div>
+        <h2>Straight <em>answers.</em></h2>
+      </div>
+      <div class="faq reveal">
+        <details open><summary>Who is this for?<i>+</i></summary><p>Streetwear and clothing brands with a store, either running ads already or ready to start. If you make the clothes and want someone else to run and make the ads, this is for you.</p></details>
+        <details><summary>How does pricing work?<i>+</i></summary><p>One flat monthly fee. No percentage of your sales, no cut of your profit. Your ad spend is separate and goes straight to Meta from your own card.</p></details>
+        <details><summary>Do you hold my ad money?<i>+</i></summary><p>Never. You add us to your ad account and the spend comes off your own card, so you always see and control it.</p></details>
+        <details><summary>What do I need to do?<i>+</i></summary><p>Add us to your ad account and send photos and video from your shoots and your customers. We make the ads from those, run them, and send you a report every Monday.</p></details>
+        <details><summary>How fast do ads go live?<i>+</i></summary><p>First ads are live within days of you adding us to the ad account and sending your content.</p></details>
+        <details><summary>Do I have to get on a call to get the plan?<i>+</i></summary><p>No. Send your Instagram and your email and the plan comes to your inbox. The 15 minute call is only if you want to walk through it together.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <div class="wrap final">
+    <h2>Plan your <em>next drop</em> with us.</h2>
+    <p class="lede">Send your Instagram and your email. Your plan comes back free.</p>
+    <form class="plan plan-form" autocomplete="on">
+      <div class="field">
+        <label for="handle2">Your brand's Instagram</label>
+        <input id="handle2" name="instagram" placeholder="@yourbrand" required>
+      </div>
+      <div class="field">
+        <label for="email2">Email</label>
+        <input id="email2" name="email" type="email" placeholder="you@brand.com" required>
+      </div>
+      <div class="field">
+        <label for="spend2">Running ads now?</label>
+        <select id="spend2" name="running_ads">
+          <option>Not yet</option>
+          <option>Yes, under $1K a month</option>
+          <option>Yes, $1K to $5K a month</option>
+          <option>Yes, over $5K a month</option>
+        </select>
+      </div>
+      <button class="btn" type="submit"><span class="lbl">Send me my plan</span> <i>&rarr;</i></button>
+      <div class="note">Free. No percentage of your sales, ever.</div>
+      <div class="done">Got it. Your plan is on the way to your inbox.</div>
+    </form>
+  </div>
 </main>
-<footer><div class="wrap">
-  <div>
-    <a class="brand" href="/"><img src="/brand/favicon-64.png" alt="" width="34" height="34"><b>Averon Scale</b></a>
-    <p style="margin-top:18px;max-width:38ch">Meta ads for streetwear and clothing brands. Run from Houston, Texas.</p>
+
+<footer>
+  <div class="wrap">
+    <div><b style="color:var(--cream)">Averon Scale</b> &nbsp;·&nbsp; Meta ads for streetwear and clothing brands</div>
+    <div><a href="mailto:hello@averonscale.com">hello@averonscale.com</a> &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; &copy; 2026 Averon Scale</div>
   </div>
-  <div><h4>Pages</h4><ul>
-    <li><a href="/work/">Work</a></li><li><a href="/how-it-works/">How it works</a></li>
-    <li><a href="/about/">About</a></li><li><a href="/free-plan/">Free ads plan</a></li></ul></div>
-  <div><h4>Contact</h4><ul>
-    <li><a href="mailto:hello@averonscale.com">hello@averonscale.com</a></li>
-    <li><a href="https://www.instagram.com/vemito/" rel="noopener">Instagram @vemito</a></li></ul></div>
-  <div class="wordmark" aria-hidden="true">averon<span></span></div>
-  <div class="legal"><span>&copy; 2026 Averon Scale</span><a href="/privacy.html">Privacy</a></div>
-</div></footer>
+</footer>
+
 <script>
-document.querySelector('.menu').addEventListener('click', function () {
-  var n = document.getElementById('nav'); var o = n.classList.toggle('open');
-  this.setAttribute('aria-expanded', o ? 'true' : 'false');
-});
+  // Plan requests go to hello@averonscale.com through FormSubmit.
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/hello@averonscale.com";
+  // Remember where the visitor came from (ad, post, DM link) so every plan request says its source.
+  const SRC_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"];
+  const src = {};
+  try {
+    const q = new URLSearchParams(location.search);
+    SRC_KEYS.forEach((k) => { const v = q.get(k); if (v) sessionStorage.setItem(k, v.slice(0, 80)); });
+    SRC_KEYS.forEach((k) => { src[k] = sessionStorage.getItem(k) || ""; });
+  } catch (err) {}
+  document.querySelectorAll(".plan-form").forEach((form) => {
+    const btn = form.querySelector("button");
+    const lbl = btn.querySelector(".lbl");
+    const note = form.querySelector(".note");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      data.append("_subject", "New plan request: " + (data.get("instagram") || ""));
+      data.append("_template", "table");
+      data.append("_captcha", "false");
+      data.append("source", src.utm_source || "direct");
+      data.append("campaign", [src.utm_medium, src.utm_campaign, src.utm_content].filter(Boolean).join(" / ") || "none");
+      btn.disabled = true;
+      lbl.textContent = "Sending...";
+      let ok = false;
+      try {
+        const r = await fetch(FORM_ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } });
+        ok = r.ok;
+      } catch (err) {}
+      if (ok) {
+        if (window.fbq) fbq("track", "Lead");
+        form.querySelectorAll(".field, .btn, .note, .lead, h3").forEach((el) => (el.style.display = "none"));
+        form.querySelector(".done").style.display = "block";
+      } else {
+        btn.disabled = false;
+        lbl.textContent = "Send me my plan";
+        note.innerHTML = 'That didn\'t go through. Email us at <a href="mailto:hello@averonscale.com" style="text-decoration:underline">hello@averonscale.com</a> and we\'ll send your plan.';
+      }
+    });
+  });
+
+  // Black Friday countdown (midnight Nov 27, 2026, Houston time)
+  const BF = new Date("2026-11-27T00:00:00-06:00").getTime();
+  const pad = (n) => String(n).padStart(2, "0");
+  function tick() {
+    const left = BF - Date.now();
+    if (left <= 0) {
+      ["d", "h", "m", "s"].forEach((k) => (document.getElementById("cd-" + k).textContent = "00"));
+      document.getElementById("ann").textContent = "It's here";
+      return;
+    }
+    const d = Math.floor(left / 864e5), h = Math.floor(left / 36e5) % 24, m = Math.floor(left / 6e4) % 60, s = Math.floor(left / 1e3) % 60;
+    document.getElementById("cd-d").textContent = pad(d);
+    document.getElementById("cd-h").textContent = pad(h);
+    document.getElementById("cd-m").textContent = pad(m);
+    document.getElementById("cd-s").textContent = pad(s);
+    document.getElementById("ann").textContent = d + " days left. Ads cost the most that week";
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Break-even calculator
+  const $ = (id) => document.getElementById(id);
+  const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
+  function calc() {
+    const aov = +$("aov").value, mar = +$("mar").value / 100, bud = +$("bud").value;
+    const cpa = aov * mar;
+    $("aov-o").textContent = money(aov);
+    $("mar-o").textContent = Math.round(mar * 100) + "%";
+    $("bud-o").textContent = money(bud);
+    $("roas").textContent = (1 / mar).toFixed(1) + "x";
+    $("cpa").textContent = money(cpa);
+    $("sales").textContent = Math.ceil(bud / cpa).toLocaleString("en-US");
+  }
+  ["aov", "mar", "bud"].forEach((id) => $(id).addEventListener("input", calc));
+  calc();
+
+  // Scroll reveal
+  const items = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .1 });
+    items.forEach((el) => io.observe(el));
+  } else { items.forEach((el) => el.classList.add("in")); }
+
+  // Statement: words light up as you scroll
+  const fill = document.getElementById("fill");
+  fill.innerHTML = fill.textContent.trim().split(/\s+/).map((w) => "<span>" + w + "</span>").join(" ");
+  const words = fill.querySelectorAll("span");
+  function paint() {
+    const r = fill.getBoundingClientRect(), vh = window.innerHeight;
+    const p = Math.min(1, Math.max(0, (vh * 0.88 - r.top) / (r.height + vh * 0.38)));
+    const n = Math.round(p * words.length);
+    words.forEach((w, i) => w.classList.toggle("on", i < n));
+  }
+  addEventListener("scroll", paint, { passive: true }); addEventListener("resize", paint); paint();
+
+  // Ad creatives scale with their own width (1 unit = 1% of the creative)
+  const mocks = document.querySelectorAll(".mock");
+  const setU = () => mocks.forEach((m) => m.style.setProperty("--u", (m.offsetWidth / 100) + "px"));
+  setU(); addEventListener("resize", setU); addEventListener("load", setU);
+  if ("ResizeObserver" in window) { const ro = new ResizeObserver(setU); mocks.forEach((m) => ro.observe(m)); }
+
+  // Card glow follows the cursor
+  document.querySelectorAll(".bx").forEach((c) => c.addEventListener("pointermove", (e) => {
+    const b = c.getBoundingClientRect();
+    c.style.setProperty("--mx", (e.clientX - b.left) + "px");
+    c.style.setProperty("--my", (e.clientY - b.top) + "px");
+  }));
 </script>
-</body></html>
+</body>
+</html>
