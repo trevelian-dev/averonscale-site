@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works | Averon Scale</title>
+<meta name="description" content="The ads we run before, during and after your drop, what you get every month, and how we start.">
+<meta property="og:title" content="How it works | Averon Scale">
+<meta property="og:description" content="Ads run and made for streetwear and clothing brands. One flat monthly fee. No percentage of your sales.">
+<meta property="og:image" content="https://averonscale.com/og.png">
+<link rel="canonical" href="https://averonscale.com/how-it-works/">
+<meta name="theme-color" content="#0d0d0d">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Archivo:wdth,wght@100..125,800..900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d0d0d; --ink2:#1a1a1a; --cream:#efe8dc; --cream2:#e4dccd; --gold:#d2a95f; --gold2:#b98d43;
+    --grey:#8d877b; --line:rgba(13,13,13,.14); --dline:rgba(239,232,220,.12);
+    --display:"Anton","Impact","Arial Narrow",sans-serif; --body:"Inter","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--cream);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  i,em{font-style:normal}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+  .disp{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.005em;line-height:.9}
+  .btn{display:inline-flex;align-items:center;gap:12px;height:54px;padding:0 10px 0 24px;border-radius:999px;font:700 15px var(--body);border:0;cursor:pointer;white-space:nowrap;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn .ar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:16px}
+  .btn.dark{background:var(--ink);color:var(--cream)} .btn.dark .ar{background:var(--gold);color:var(--ink)}
+  .btn.gold{background:var(--gold);color:var(--ink)} .btn.gold .ar{background:var(--ink);color:var(--gold)}
+  .btn.line{background:transparent;color:var(--ink);border:2px solid var(--ink);padding:0 24px}
+  .btn[disabled]{opacity:.6;cursor:wait}
+
+  /* ---------- HERO (black and white) ---------- */
+  .hero-wrap{padding:16px 16px 0}
+  .hero{position:relative;max-width:1400px;margin:0 auto;border-radius:30px;background:#0b0b0b;color:#f4f1ea;overflow:hidden;min-height:700px;padding:22px 34px 44px;border:1px solid rgba(255,255,255,.09)}
+  .hero::after{content:"";position:absolute;inset:0;border-radius:30px;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");mix-blend-mode:screen}
+  .nav{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:flex;align-items:center;gap:10px;font:800 18px var(--body);letter-spacing:-.01em;color:#f4f1ea}
+  .brand img{width:34px;height:34px;border-radius:8px;filter:grayscale(1)}
+  .links{display:flex;gap:30px;font-weight:600;font-size:15px;color:#f4f1ea}
+  .links a{opacity:.7} .links a:hover{opacity:1}
+  .nav .btn{height:46px;font-size:14px;padding:0 8px 0 18px} .nav .btn .ar{width:30px;height:30px}
+  .menu-btn{display:none;height:42px;padding:0 16px;border-radius:999px;border:2px solid #f4f1ea;background:transparent;font:700 14px var(--body);color:#f4f1ea}
+  .btn.white{background:#f4f1ea;color:#0b0b0b} .btn.white .ar{background:#0b0b0b;color:#f4f1ea}
+  .btn.black{background:#0b0b0b;color:#f4f1ea} .btn.black .ar{background:#f4f1ea;color:#0b0b0b}
+  .btn.wline{background:transparent;color:#f4f1ea;border:2px solid rgba(244,241,234,.8);padding:0 24px}
+  .hero-grid{position:relative;z-index:3;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;margin-top:64px;align-items:end}
+  .hero h1{font-size:clamp(80px,10.4vw,172px);color:#f4f1ea}
+  .hero .sub{max-width:500px;margin-top:26px;font-size:19px;font-weight:500;color:#aaa59b}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .stats{display:flex;gap:0;margin-top:56px;border-top:2px solid rgba(244,241,234,.7);max-width:660px}
+  .stat{flex:1;padding:18px 18px 0 0}
+  .stat + .stat{padding-left:18px;border-left:1px solid rgba(244,241,234,.2)}
+  .stat b{display:block;font:400 clamp(38px,4vw,56px)/1 var(--display);letter-spacing:.01em;color:#f4f1ea}
+  .stat span{display:block;margin-top:6px;font-size:13px;font-weight:600;color:#8f8a81;line-height:1.3}
+  .form.hform{position:relative;top:auto;background:#f4f1ea;color:#0b0b0b;border-radius:24px;padding:30px}
+  .hform .lead,.hform .msg{color:#5b574f}
+  .hform .field input,.hform .field select{background:#fff;border-color:rgba(11,11,11,.16)}
+  .hform .field input:focus,.hform .field select:focus{border-color:#0b0b0b;background:#fff}
+
+  /* ---------- CREAM ---------- */
+  .cream{background:var(--cream);color:var(--ink);border-radius:30px;margin:16px;padding:110px 0 100px}
+  .big2{font-size:clamp(52px,7.2vw,118px)}
+  .big2 .g{color:#a39d90}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:70px}
+  .card{background:#fff;border-radius:22px;padding:26px 24px 28px;border:1px solid var(--line)}
+  .ico{width:46px;height:46px;border-radius:12px;background:var(--ink);display:grid;place-items:center;margin-bottom:46px}
+  .ico svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font:400 28px/1 var(--display);text-transform:uppercase;margin-bottom:10px}
+  .card p{color:#555046;font-size:15px}
+
+  /* ---------- DARK ---------- */
+  .sec-dark{padding:120px 0}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .sec-dark h2{font-size:clamp(56px,7vw,112px);color:var(--cream)}
+  .sec-dark h2 .g{color:var(--gold)}
+  .lede{font-size:19px;color:#b9b2a5;margin-top:24px;max-width:520px}
+  .probs{display:grid;gap:12px}
+  .prob{display:flex;align-items:center;gap:16px;background:var(--ink2);border:1px solid var(--dline);border-radius:18px;padding:20px 22px}
+  .prob .x{flex:none;width:36px;height:36px;border-radius:50%;background:rgba(210,169,95,.14);color:var(--gold);display:grid;place-items:center;font-weight:800}
+  .prob b{display:block;font-weight:700;font-size:17px}
+  .prob span{display:block;color:var(--grey);font-size:14px;margin-top:2px}
+  .prob.fix{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .prob.fix .x{background:var(--ink);color:var(--gold)}
+  .prob.fix span{color:#3a3122}
+
+  /* ---------- RESULTS ---------- */
+  .results{background:var(--cream);color:var(--ink);border-radius:30px;margin:16px;padding:110px 0}
+  .res-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+  .res-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;margin-top:60px}
+  .res{border-radius:24px;padding:30px 28px;display:flex;flex-direction:column;justify-content:space-between;min-height:300px}
+  .res.k{background:var(--ink);color:var(--cream)}
+  .res.w{background:#fff;border:1px solid var(--line)}
+  .res small{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}
+  .res.k small{color:var(--gold)}
+  .res .num{font:400 clamp(60px,6vw,92px)/.9 var(--display);margin:18px 0 10px}
+  .res p{font-size:15px;color:#5a554b} .res.k p{color:#b9b2a5}
+  .note{margin-top:22px;font-size:13px;color:#7a7468;max-width:760px}
+
+  /* ---------- STEPS + FORM ---------- */
+  .how{padding:120px 0 110px}
+  .how-grid{display:grid;grid-template-columns:1fr 480px;gap:60px;align-items:start}
+  .steps{margin-top:44px;display:grid;gap:12px}
+  .step{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;padding:22px;border:1px solid var(--dline);border-radius:20px;background:var(--ink2)}
+  .step .n{font:400 46px/1 var(--display);color:var(--gold)}
+  .step h3{font:400 26px/1 var(--display);text-transform:uppercase;margin-bottom:6px}
+  .step p{color:#b9b2a5;font-size:15px}
+  .form{background:var(--gold);color:var(--ink);border-radius:26px;padding:32px;position:sticky;top:20px}
+  .form h3{font:400 46px/.95 var(--display);text-transform:uppercase}
+  .form .lead{font-size:15px;font-weight:500;margin:10px 0 18px;color:#3a3122}
+  .field{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+  .field label{font-size:13px;font-weight:700}
+  .field input,.field select{height:52px;border-radius:14px;border:2px solid rgba(13,13,13,.25);background:#f3e3c3;padding:0 14px;font:600 16px var(--body);color:var(--ink);outline:none;width:100%}
+  .field input:focus,.field select:focus{border-color:var(--ink);background:#fff6e4}
+  .form .btn{width:100%;justify-content:space-between;margin-top:20px}
+  .form .msg{font-size:13px;margin-top:12px;color:#3a3122}
+  .form .done{display:none;padding:20px 0 4px}
+  .form.sent .fields{display:none} .form.sent .done{display:block}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--dline);padding:70px 0 34px;color:var(--grey);font-size:15px}
+  footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+  footer a{color:var(--cream)} footer a:hover{color:var(--gold)}
+  footer h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;font-weight:600}
+  footer ul{list-style:none;display:grid;gap:10px}
+  .fbrand{display:flex;align-items:center;gap:10px;color:var(--cream);font:800 19px "Archivo",var(--body);font-stretch:112%}
+  .fbrand img{width:30px;height:30px;border-radius:7px}
+  .wordmark{grid-column:1/-1;font:900 clamp(56px,18vw,300px)/.8 "Archivo",var(--body);font-stretch:118%;letter-spacing:-.05em;color:var(--cream);margin-top:40px;white-space:nowrap;overflow:hidden;user-select:none}
+  .wordmark span{display:inline-block;width:.15em;height:.15em;border-radius:50%;background:var(--gold);margin-left:.03em}
+  .legal{grid-column:1/-1;border-top:1px solid var(--dline);padding-top:22px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1060px){
+    .links{display:none}
+    .menu-btn{display:inline-flex;align-items:center}
+    .links.open{display:flex;position:absolute;top:58px;left:0;right:0;flex-direction:column;gap:0;background:var(--ink);color:var(--cream);border-radius:20px;padding:12px 22px;z-index:20}
+    .links.open a{padding:12px 0;opacity:1}
+    .hero{min-height:0}
+    .hero-grid{grid-template-columns:1fr;gap:36px;margin-top:44px}
+    .hero{padding:18px 20px 22px}
+    .stats{margin-top:40px}
+    .cards{grid-template-columns:1fr 1fr}
+    .split,.how-grid{grid-template-columns:1fr}
+    .res-grid{grid-template-columns:1fr}
+    .form{position:static}
+    footer .wrap{grid-template-columns:1fr 1fr}
+    footer .wrap>div:first-child{grid-column:1/-1}
+  }
+  @media (max-width:600px){
+    .hero-wrap{padding:10px 10px 0}
+    .nav .btn{display:none}
+    .hero h1{font-size:clamp(64px,21vw,110px)}
+    .hero .ctas .btn{width:100%;justify-content:space-between}
+    .stat{padding:14px 8px 0 0}.stat+.stat{padding-left:10px}
+    .stat b{font-size:30px}.stat span{font-size:11px}
+    .form.hform{padding:22px}
+    .cream,.results{margin:10px;padding:76px 0}
+    .cards{grid-template-columns:1fr}
+    .sec-dark,.how{padding:80px 0}
+    .form{padding:24px}
+  }
+
+  /* ---------- inner pages ---------- */
+  .hero.page{min-height:0;padding-bottom:70px}
+  .hero.page h1{font-size:clamp(64px,8.6vw,140px);margin-top:70px;max-width:12ch}
+  .hero.page .sub{max-width:620px}
+  .links a[aria-current]{opacity:1;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8d877b;margin-bottom:18px;display:block}
+  .sec-dark .eyebrow{color:var(--gold)}
+  .stages{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:64px}
+  .stage{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px 26px 30px}
+  .stage .n{font:400 56px/1 var(--display);color:#b9b2a5}
+  .stage h3{font:400 34px/1 var(--display);text-transform:uppercase;margin:34px 0 12px}
+  .stage p{color:#555046;font-size:15px}
+  .stage .ad{margin-top:22px;border-radius:14px;background:var(--ink);color:var(--cream);padding:16px 16px 14px;font-size:13px}
+  .stage .ad b{display:block;font:400 24px/1 var(--display);text-transform:uppercase;margin:8px 0 6px}
+  .stage .ad span{opacity:.6;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .stage .ad u{display:inline-block;margin-top:10px;text-decoration:none;background:var(--cream);color:var(--ink);border-radius:999px;padding:6px 12px;font-weight:700;font-size:12px}
+  .list{display:grid;gap:12px;margin-top:10px}
+  .bigres{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:60px}
+  .bigres .res{min-height:0;gap:26px}
+  .row4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;border-top:1px solid rgba(13,13,13,.12);padding-top:18px}
+  .res.k .row4{border-color:rgba(239,232,220,.14)}
+  .row4 b{display:block;font:400 30px/1 var(--display)}
+  .row4 span{display:block;font-size:12px;color:#7a7468;margin-top:6px}
+  .res.k .row4 span{color:#9d968a}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:50px}
+  .tile{background:var(--ink2);border:1px solid var(--dline);border-radius:22px;padding:28px 26px}
+  .tile .num{font:400 64px/.9 var(--display);color:var(--gold)}
+  .tile h3{font:400 26px/1.05 var(--display);text-transform:uppercase;margin:22px 0 10px}
+  .tile p{color:#b9b2a5;font-size:15px}
+  .now{margin-top:12px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:var(--gold);color:var(--ink);border-radius:22px;padding:26px 28px}
+  .now h3{font:400 30px/1 var(--display);text-transform:uppercase;margin-bottom:6px}
+  .now p{color:#3a3122;max-width:640px}
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:60px}
+  .cmp .col{border-radius:24px;padding:32px 30px;background:#fff;border:1px solid var(--line)}
+  .cmp .col.us{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .cmp h3{font:400 36px/1 var(--display);text-transform:uppercase;margin-bottom:22px}
+  .cmp ul{list-style:none;display:grid;gap:14px}
+  .cmp li{display:flex;gap:12px;font-size:16px;color:#555046}
+  .cmp .us li{color:#cfc8bb}
+  .cmp li::before{content:"\00d7";flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:rgba(13,13,13,.08);font-weight:800}
+  .cmp .us li::before{content:"\2713";background:var(--gold);color:var(--ink)}
+  .calc{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px;background:var(--ink2);border:1px solid var(--dline);border-radius:26px;padding:34px}
+  .calc label{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:10px}
+  .calc output{font:400 24px/1 var(--display);color:var(--gold)}
+  .calc input[type=range]{width:100%;accent-color:var(--gold);margin-bottom:28px}
+  .calc .out{display:grid;gap:20px;border-left:1px solid var(--dline);padding-left:40px}
+  .calc .out b{display:block;font:400 64px/.9 var(--display);color:var(--cream)}
+  .calc .out span{display:block;color:#9d968a;font-size:14px;margin-top:6px}
+  .faq{margin-top:50px;border-top:2px solid var(--ink)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;padding:26px 44px 26px 0;font:400 30px/1.05 var(--display);text-transform:uppercase;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:6px;top:22px;font:600 30px var(--body)}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{padding:0 0 26px;color:#555046;max-width:760px}
+  @media (max-width:1060px){
+    .stages,.bigres,.tiles,.cmp{grid-template-columns:1fr}
+    .calc{grid-template-columns:1fr}
+    .calc .out{border-left:0;padding-left:0;border-top:1px solid var(--dline);padding-top:26px}
+  }
+  @media (max-width:600px){
+    .hero.page h1{font-size:clamp(54px,16vw,90px);margin-top:44px}
+    .row4{grid-template-columns:1fr 1fr}
+    .faq summary{font-size:24px}
+    .calc{padding:22px}
+  }
+</style>
+<!-- Meta Pixel: Averon Scale -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1146721501546311');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1146721501546311&amp;ev=PageView&amp;noscript=1"></noscript>
+</head>
+<body>
+
+<div class="hero-wrap">
+<header class="hero page">
+  <nav class="nav">
+    <a class="brand" href="/"><img src="/brand/favicon-64.png" alt="">Averon Scale</a>
+    <div class="links" id="links">
+      <a href="/how-it-works/" aria-current="page">How it works</a><a href="/results/">Results</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="links">Menu</button>
+      <a class="btn white" href="#plan">Free ads plan <span class="ar">&rarr;</span></a>
+    </div>
+  </nav>
+  <div style="position:relative;z-index:3">
+    <h1 class="disp">Ads for every<br>stage of the drop.</h1>
+    <p class="sub">What we run in the weeks before, on drop day and the days after, what you get every month, and the three steps to live ads.</p>
+  </div>
+</header>
+</div>
+
+<section class="cream">
+  <div class="wrap">
+    <span class="eyebrow">Built around how clothing brands sell</span>
+    <h2 class="disp big2">Before, during <span class="g">and after the drop.</span></h2>
+    <div class="stages">
+      <div class="stage"><div class="n">01</div><h3>Weeks before</h3><p>Ads that send new people to your early-access list, so drop day starts with buyers already waiting.</p>
+        <div class="ad"><span>Sponsored</span><b>Members first.</b>Drop 01 opens Friday. Get on the list.<br><u>Join the list</u></div></div>
+      <div class="stage"><div class="n">02</div><h3>Drop day</h3><p>Ads only to the people who signed up, visited or watched. The warmest buyers you have, reached first.</p>
+        <div class="ad"><span>Sponsored</span><b>Drop 01 is live.</b>Small run. When it's gone, it's gone.<br><u>Shop now</u></div></div>
+      <div class="stage"><div class="n">03</div><h3>The days after</h3><p>Reminders to anyone who left a cart, and new ads built off whatever sold best.</p>
+        <div class="ad"><span>Sponsored</span><b>Still thinking?</b>Your size is still here. For now.<br><u>Finish your order</u></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-dark">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">What you get every month</span>
+      <h2 class="disp">Ads, run<br><span class="g">and made for you.</span></h2>
+      <p class="lede">One flat monthly fee. No percentage of your sales, ever. Ad spend goes straight to Meta from your own card.</p>
+    </div>
+    <div class="probs">
+      <div class="prob"><div class="x">01</div><div><b>Your Instagram and Facebook ads, run daily</b><span>Budget moved to whatever sells cheapest. Losers cut fast.</span></div></div>
+      <div class="prob"><div class="x">02</div><div><b>Ads made from your own photos and video</b><span>Your shoots, your customers, your world. Not stock templates.</span></div></div>
+      <div class="prob"><div class="x">03</div><div><b>Tracking on your store</b><span>Every sale counted, so Meta learns who actually buys.</span></div></div>
+      <div class="prob"><div class="x">04</div><div><b>Audiences for every drop</b><span>Site visitors, viewers, followers and your list, ready before launch.</span></div></div>
+      <div class="prob fix"><div class="x">05</div><div><b>A report every Monday</b><span>Spend, sales and cost per sale.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cream">
+  <div class="wrap">
+    <span class="eyebrow">Inside your free plan</span>
+    <h2 class="disp big2">We look at <span class="g">four things.</span></h2>
+    <div class="cards">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div><h3>Your Instagram</h3><p>What you post, what already gets people to react, and what can become an ad.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg></div><h3>Your store</h3><p>Where a buyer gets stuck between the ad and the checkout.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Your ads</h3><p>What you've run, how long, and whether it ever had a chance to learn.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></div><h3>Your next drop</h3><p>The weeks before, drop day and after, with your own dates.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="plan">
+  <div class="wrap how-grid">
+    <div>
+      <h2 class="disp" style="font-size:clamp(56px,7vw,112px)">Less guessing.<br><span style="color:var(--gold)">More sales.</span></h2>
+      <div class="steps">
+        <div class="step"><div class="n">01</div><div><h3>Get your free plan</h3><p>Send your Instagram. We look at your page, store and ads and send back a plan for your next drop.</p></div></div>
+        <div class="step"><div class="n">02</div><div><h3>15 minute call</h3><p>We go over the plan and your numbers. If it's not a fit, we'll say so.</p></div></div>
+        <div class="step"><div class="n">03</div><div><h3>Ads go live</h3><p>You add us to your ad account and send your photos and video. First ads go live within days.</p></div></div>
+      </div>
+    </div>
+    <form class="form plan-form" novalidate>
+      <div class="fields">
+        <h3>Get your free ads plan</h3>
+        <p class="lead">Built around your next drop. No call needed.</p>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <div class="field"><label for="ig">Your brand's Instagram</label><input id="ig" name="instagram" placeholder="@yourbrand" required></div>
+        <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" placeholder="you@brand.com" required></div>
+        <div class="field"><label for="ra">Running ads now?</label><select id="ra" name="running_ads"><option>Not yet</option><option>Boosting posts only</option><option>Yes, under $1K a month</option><option>Yes, $1K to $5K a month</option><option>Yes, over $5K a month</option></select></div>
+        <button class="btn dark" type="submit"><span class="lbl">Send me my plan</span> <span class="ar">&rarr;</span></button>
+        <p class="msg">Free. No percentage of your sales, ever.</p>
+      </div>
+      <div class="done"><h3>Got it.</h3><p class="lead">Your plan is on the way to your inbox.</p></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><div class="fbrand"><img src="/brand/favicon-64.png" alt="">Averon Scale</div><p style="margin-top:16px;max-width:36ch">Meta ads for streetwear and clothing brands. Run from Houston, Texas.</p></div>
+    <div><h4>Pages</h4><ul><li><a href="/how-it-works/">How it works</a></li><li><a href="/results/">Results</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:hello@averonscale.com">hello@averonscale.com</a></li><li><a href="#plan">Free ads plan</a></li></ul></div>
+    <div class="wordmark" aria-hidden="true">averon<span></span></div>
+    <div class="legal"><span>&copy; 2026 Averon Scale</span><a href="/privacy.html">Privacy</a></div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var mb = document.querySelector(".menu-btn"), links = document.getElementById("links");
+  mb.addEventListener("click", function () { var o = links.classList.toggle("open"); mb.setAttribute("aria-expanded", o ? "true" : "false"); });
+
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycby5DB3YlIlwrNe3bXu2bcZ8g4V5mltjDd8-gWjfH8ndT7OLCzyLyXo-dgZF9gMq_yrG/exec";
+  var KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"], src = {};
+  try {
+    var q = new URLSearchParams(location.search);
+    KEYS.forEach(function (k) { var v = q.get(k); if (v) sessionStorage.setItem(k, v.slice(0, 80)); });
+    KEYS.forEach(function (k) { src[k] = sessionStorage.getItem(k) || ""; });
+  } catch (e) {}
+  document.querySelectorAll(".plan-form").forEach(function (form) {
+    var btn = form.querySelector("button"), lbl = btn.querySelector(".lbl"), msg = form.querySelector(".msg");
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var ig = form.instagram.value.trim(), em = form.email.value.trim();
+      if (!ig || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { msg.textContent = "Add your brand's Instagram and a working email."; return; }
+      var data = new URLSearchParams(new FormData(form));
+      data.append("page", location.pathname);
+      data.append("source", src.utm_source || "direct");
+      data.append("campaign", [src.utm_medium, src.utm_campaign, src.utm_content].filter(Boolean).join(" / ") || "none");
+      btn.disabled = true; lbl.textContent = "Sending...";
+      var ok = false;
+      try { var r = await fetch(ENDPOINT, { method: "POST", body: data }); var j = await r.json(); ok = r.ok && j.success === true; } catch (err) {}
+      if (ok) { form.classList.add("sent"); if (window.fbq) fbq("track", "Lead"); }
+      else {
+        btn.disabled = false; lbl.textContent = "Send me my plan";
+        var body = encodeURIComponent("Brand Instagram: " + ig + "\nRunning ads: " + form.running_ads.value);
+        msg.innerHTML = 'That didn\'t go through. <a href="mailto:hello@averonscale.com?subject=Free%20ads%20plan&body=' + body + '" style="text-decoration:underline;font-weight:700">Send it by email instead</a>, it\'s already filled in.';
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
